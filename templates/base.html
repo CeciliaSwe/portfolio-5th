@@ -2,214 +2,156 @@
 
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
 
     {% block meta %}
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     {% endblock %}
 
     {% block extra_meta %}
     {% endblock %}
 
     {% block corecss %}
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Murecho:wght@200;400&family=Open+Sans:wght@300&family=Raleway:wght@200;300;400;500;700&family=Roboto+Slab:wght@198;200&display=swap" rel="stylesheet">        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Murecho:wght@200;400&family=Open+Sans:wght@300&family=Raleway:wght@200;300;400;500;700&family=Roboto+Slab:wght@198;200&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
 
     {% block extra_css %}
     {% endblock %}
 
     {% block corejs %}
-        <script src="https://kit.fontawesome.com/79cb3fe9f6.js" crossorigin="anonymous"></script>        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/79cb3fe9f6.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
     {% endblock %}
 
     {% block extra_js %}
     {% endblock %}
 
     <title>Boutique Ado {% block extra_title %}{% endblock %}</title>
-  </head>
-  <body>
-    <!--<header class="container-fluid fixed-top">
-        <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
-                <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                    <h2 class="logo-font text-black my-0"><strong>Boutique</strong> Ado</h2>
+</head>
+
+<body>
+    <header>
+        <div class="px-3 py-2 bg-dark text-white d-none d-md-block">
+            <div class="container">
+              <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start my-heading-font">
+                <a href="{% url 'home' %}" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+                  <img src="" alt="">
+                    <h1 class="my-heading-font ps-2">Active8</h1>
+
                 </a>
-            </div>
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-                <form method="GET" action="">
-                    <div class="input-group w-100">
-                        <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
-                        <div class="input-group-append">
-                            <button class="form-control btn btn-black border border-black rounded-0" type="submit">
-                                <span class="icon">
-                                    <i class="fas fa-search"></i>
-                                </span>
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-                <ul class="list-inline list-unstyled text-center text-lg-right my-0">
-                    <li class="list-inline-item dropdown">
-                        <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <div class="text-center">
-                                <div><i class="fas fa-user fa-lg"></i></div>
-                                <p class="my-0">My Account</p>
-                            </div>
-                        </a>
-                        <div class="dropdown-menu border-0" aria-labelledby="user-options">
-                            {% if request.user.is_authenticated %}
-                                {% if request.user.is_superuser %}
-                                    <a href="" class="dropdown-item">Product Management</a>
-                                {% endif %}
-                                <a href="" class="dropdown-item">My Profile</a>
-                                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-                            {% else %}
-                                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-                            {% endif %}
-                        </div>
+
+                <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+                  <li>
+                    <a href="{% url 'home' %}" class="nav-link text-uppercase">
+                      Home
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="nav-link text-uppercase">
+                      Shop
+                      <i class="fa-solid fa-shop"></i>
+                    </a>
+                  </li>
+
+                  <li>
+
+                  </li>
+                  <li>
+
+                    <a href="#" class="nav-link text-uppercase dropdown-toggle"
+                      id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">
+                      <i class="fas fa-user-circle"></i>
+
+                      <!-- if user is authenticated, his name is shown, otherwise the words "Log in" -->
+                      {% if request.user.is_authenticated %}
+                      {{ request.user.username }}
+                      </a>
+                      <!-- drop down for user that is logged in -->
+                      <ul class="dropdown-menu text-small bg-dark text-white" aria-labelledby="dropdownUser">
+
+                        {% if request.user.is_superuser %}
+                        <li>
+                          <a class="dropdown-item text-white text-uppercase" href="#">Shop Management
+                          </a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item text-white text-uppercase" href="#">FAQ Management
+                          </a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item text-white text-uppercase" href="#"> Newsletter Subscribers
+                          </a>
+                        </li>
+                        {% endif %}
+
+                        <li>
+                          <a class="dropdown-item text-white text-uppercase" href="#">User profile
+                          </a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item text-white text-uppercase" href="{% url 'account_logout' %}">Sign out
+                          </a>
+                        </li>
+                      </ul>
+                      </li>
+                      {% else %}
+                      Log in
+                      </a>
+                        <!-- drop down for user that is NOT logged in -->
+                      <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser">
+                        <li>
+                          <a class="dropdown-item text-uppercase" href="{% url 'account_signup' %}">Register
+                          </a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item text-uppercase" href="{% url 'account_login' %}">Log in
+                          </a>
+                        </li>
+                      </ul>
                     </li>
-                    <li class="list-inline-item">
-                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">
-                            <div class="text-center">
-                                <div><i class="fas fa-shopping-bag fa-lg"></i></div>
-                                <p class="my-0">
-                                    {% if grand_total %}
-                                        ${{ grand_total|floatformat:2 }}
-                                    {% else %}
-                                        $0.00
-                                    {% endif %}
-                                </p>
-                            </div>
-                        </a>
+                    {% endif %}
+                    <li>
+                      <!-- cart -->
+                      <a href="#" class="nav-link">
+                          Cart
+
+
+                        {% if grand_total %}
+                        SEK {{ grand_total|floatformat:2 }}
+                        {% else %}
+                        Empty
+                        {% endif %}
+                      </a>
                     </li>
                 </ul>
+              </div>
             </div>
-        </div>
-    </header> -->
-
-<header>
-    <div class="px-3 py-2 bg-dark text-white d-none d-md-block">
-        <div class="container">
-          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start my-heading-font">
-            <a href="{% url 'home' %}" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
-              <img src="" alt="">
-                <h1 class="my-heading-font ps-2">Active8</h1>
-
-            </a>
-
-            <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
-              <li>
-                <a href="{% url 'home' %}" class="nav-link text-uppercase">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="#" class="nav-link text-uppercase">
-                  Shop
-                </a>
-              </li>
-              <li>
-                <a href="#" class="nav-link text-uppercase">
-                  FAQ
-                </a>
-              </li>
-              <li>
-                <a href="#" class="nav-link text-white dropdown-toggle text-uppercase" id="dropdownFind" data-bs-toggle="dropdown" aria-expanded="false">
-                  Find
-                </a>
-                  <div class="dropdown-menu text-small bg-dark text-white text-uppercase" aria-labelledby="dropdownFind">
-                      <form class="form" method="GET" action="#">
-                        <div class="input-group p-3">
-                        <input type="text" class="search-form form-control" name="q" placeholder="Search..." aria-label="Search">
-                        <button type="submit" class="btn btn-sm btn-secondary text-white">Find</button>
-                        </div>
-                      </form>
-                  </div>
-
-              </li>
-              <li>
-                <!-- user-->
-                <a href="#" class="nav-link text-uppercase dropdown-toggle"
-                  id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">
-
-                  <!-- if user is authenticated, his name is shown, otherwise the words "Log in" -->
-                  {% if request.user.is_authenticated %}
-                  {{ request.user.username }}
-                  </a>
-                  <!-- drop down for user that is logged in -->
-                  <ul class="dropdown-menu text-small bg-dark text-white" aria-labelledby="dropdownUser">
-
-                    {% if request.user.is_superuser %}
-                    <li>
-                      <a class="dropdown-item text-white text-uppercase" href="#">Shop Management
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item text-white text-uppercase" href="#">FAQ Management
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item text-white text-uppercase" href="#"> Newsletter Subscribers
-                      </a>
-                    </li>
-                    {% endif %}
-
-                    <li>
-                      <a class="dropdown-item text-white text-uppercase" href="#">User profile
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item text-white text-uppercase" href="{% url 'account_logout' %}">Sign out
-                      </a>
-                    </li>
-                  </ul>
-                  </li>
-                  {% else %}
-                  Log in
-                  </a>
-                    <!-- drop down for user that is NOT logged in -->
-                  <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser">
-                    <li>
-                      <a class="dropdown-item text-uppercase" href="{% url 'account_signup' %}">Register
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item text-uppercase" href="{% url 'account_login' %}">Log in
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-                {% endif %}
-                <li>
-                  <!-- trolley -->
-                  <a href="#" class="nav-link">
-
-                    {% if grand_total %}
-                    SEK {{ grand_total|floatformat:2 }}
-                    {% else %}
-                    Empty
-                    {% endif %}
-                  </a>
-                </li>
-            </ul>
           </div>
-        </div>
-      </div>
-    </header>
+        </header>
+
+
 
 
     {% if messages %}
-        <div class="message-container"></div>
+    <div class="message-container"></div>
     {% endif %}
 
     {% block page_header %}
@@ -222,5 +164,6 @@
     {% endblock %}
 
 
-  </body>
+</body>
+
 </html>
