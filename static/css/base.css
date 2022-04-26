@@ -57,6 +57,13 @@ body {
 }
 
 
+
+
+
+
+
+
+
 /* NAVBAR FOR LARGE SCREENS
   -------------------------------------------------- */
 
@@ -67,6 +74,7 @@ body {
 .icon-dark {
     fill: #343a40;
 }
+
 .icon-success {
     fill: #198754;
 }
@@ -92,21 +100,21 @@ li>a.dropdown-item:hover {
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
     .container {
-      max-width: 80%;
+        max-width: 80%;
     }
-  }
+}
 
-  /* fixed top navbar only on medium and up */
-  @media (min-width: 992px) {
-      .fixed-top-desktop-only {
-          position: fixed;
-          top: 0;
-          right: 0;
-          left: 0;
-          z-index: 1030;
-      }
+/* fixed top navbar only on medium and up */
+@media (min-width: 992px) {
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
 
-      .header-container {
-          padding-top: 164px;
-      }
-  }
+    .header-container {
+        padding-top: 164px;
+    }
+}
