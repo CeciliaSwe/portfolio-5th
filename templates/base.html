@@ -2,124 +2,246 @@
 
 <!doctype html>
 <html lang="en">
-  <head>
 
-    {% block meta %}
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    {% endblock %}
+<head>
 
-    {% block extra_meta %}
-    {% endblock %}
+  {% block meta %}
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  {% endblock %}
 
-    {% block corecss %}
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap">
-        <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    {% endblock %}
+  {% block extra_meta %}
+  {% endblock %}
 
-    {% block extra_css %}
-    {% endblock %}
+  {% block corecss %}
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap">
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  {% endblock %}
 
-    {% block corejs %}
-        <script src="https://kit.fontawesome.com/e9c73d7092.js" crossorigin="anonymous"></script>
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    {% endblock %}
+  {% block extra_css %}
+  {% endblock %}
 
-    {% block extra_js %}
-    {% endblock %}
+  {% block corejs %}
+  <script src="https://kit.fontawesome.com/e9c73d7092.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+  </script>
+  {% endblock %}
 
-    <title>Active8 {% block extra_title %}{% endblock %}</title>
-  </head>
-  <body>
-    <header class="container-fluid fixed-top">
-        <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
-                <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                    <h2 class="logo-font text-black my-0">Activ<strong>8</strong></h2>
+  {% block extra_js %}
+  {% endblock %}
+
+  <title>Active8 {% block extra_title %}{% endblock %}</title>
+</head>
+
+<body>
+  <div class="px-3 py-2 bg-dark text-white d-none d-md-block">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start my-heading-font">
+        <a href="{% url 'home' %}"
+          class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+          <img src="" alt="">
+          <h1 class="my-heading-font ps-2 mr-5 left">Active8</h1>
+        </a>
+        <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+          <li>
+            <a href="{% url 'home' %}" class="nav-link text-uppercase
+                {% if request.resolver_match.url_name == 'home' %}
+                text-success active {% else %} text-white {% endif %}
+                  ">
+              <svg class="bi d-block mx-auto mb-1" width="24" height="24" fill="currentColor">
+                <use xlink:href="#home" /></svg>
+              Home
+            </a>
+          </li>
+          <!-- Shop dropdown -->
+          <li class="list-inline-item dropdown">
+            <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              <div class="text-center">
+                <div><i class="fas fa-store-alt"></i></div>
+                <p class="my-0">Shop <i class="fas fa-caret-down"></i></i></p>
+              </div>
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="user-options">
+              <a href="{% url 'products' %}?category=kids,adolescents,Adults" class="dropdown-item">All Adventures</a>
+              <a href="{% url 'products' %}?category=kids" class="dropdown-item">Kids</a>
+              <a href="{% url 'products' %}?category=adolescents" class="dropdown-item">Adolescents</a>
+              <a href="{% url 'products' %}?category=Adults" class="dropdown-item">Adults</a>
+
+
+
+            </div>
+          </li>
+          <li>
+            <a href="{% url 'products' %}" class="nav-link text-uppercase">
+              <svg class="bi d-block mx-auto mb-1" width="24" height="24" fill="currentColor">
+                <use xlink:href="#shop" /></svg>
+              Shop
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'products' %}" class="nav-link text-uppercase">
+              <svg class="bi d-block mx-auto mb-1" width="24" height="24" fill="currentColor">
+                <use xlink:href="#faq" /></svg>
+              FAQ
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link text-white dropdown-toggle text-uppercase" id="dropdownFind"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              <svg class="bi d-block mx-auto mb-1" width="24" height="24" fill="currentColor">
+                <use xlink:href="#find" /></svg>
+              Find
+            </a>
+            <div class="dropdown-menu text-small bg-dark text-white text-uppercase" aria-labelledby="dropdownFind">
+              <form class="form" method="GET" action="">
+                <div class="input-group p-3">
+                  <input type="text" class="search-form form-control" name="q" placeholder="Search..."
+                    aria-label="Search">
+                  <button type="submit" class="btn btn-sm btn-secondary text-white">Find</button>
+                </div>
+              </form>
+            </div>
+          </li>
+          <!-- user dropdown option 1-->
+          <li class="list-inline-item dropdown">
+            <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              <div class="text-center">
+                <div><i class="fas fa-user fa-lg"></i></div>
+                <p class="my-0">My Account <i class="fas fa-caret-down"></i></p>
+              </div>
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="user-options">
+              {% if request.user.is_authenticated %}
+              {% if request.user.is_superuser %}
+              <a href="" class="dropdown-item">Product Management</a>
+              {% endif %}
+              <a href="" class="dropdown-item">My Profile</a>
+              <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+              {% else %}
+              <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+              <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+              {% endif %}
+            </div>
+          </li>
+          <li>
+            <!-- user-->
+            <a href="#" class="nav-link text-uppercase dropdown-toggle
+                {% if request.resolver_match.url_name == 'profile' %}
+                text-success active
+                {% elif request.resolver_match.url_name == 'account_login' %}
+                text-success active
+                {% elif request.resolver_match.url_name == 'account_logout' %}
+                text-success active
+                {% elif request.resolver_match.url_name == 'account_reset_password' %}
+                text-success active
+                {% elif request.resolver_match.url_name == 'account_email' %}
+                text-success active
+                {% elif request.resolver_match.url_name == 'subscribers' %}
+                text-success active
+                {% else %} text-white {% endif %}
+
+                " id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">
+              <svg class="bi d-block mx-auto mb-1" width="24" height="24" fill="currentColor">
+                <use xlink:href="#people-circle" />
+              </svg>
+              <!-- if user is authenticated, his name is shown, otherwise the words "Log in" -->
+              {% if request.user.is_authenticated %}
+              {{ request.user.username }}
+            </a>
+            <!-- drop down for user that is logged in -->
+            <ul class="dropdown-menu text-small bg-dark text-white" aria-labelledby="dropdownUser">
+
+              {% if request.user.is_superuser %}
+              <li>
+                <a class="dropdown-item text-white text-uppercase" href="">Shop Management
                 </a>
-            </div>
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-                <form method="GET" action="">
-                    <div class="input-group w-100">
-                        <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
-                        <div class="input-group-append">
-                            <button class="form-control btn btn-black border border-black rounded-0" type="submit">
-                                <span class="icon">
-                                    <i class="fas fa-search"></i>
-                                </span>
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-                <ul class="list-inline list-unstyled text-center text-lg-right my-0">
-                    <li class="list-inline-item">
-                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">
-                            <div class="text-center">
-                                <div><i class="fas fa-store-alt"></i></div>
-                                <p class="my-0">
-                                    Shop
-                                </p>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="list-inline-item dropdown">
-                        <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <div class="text-center">
-                                <div><i class="fas fa-user fa-lg"></i></div>
-                                <p class="my-0">My Account</p>
-                            </div>
-                        </a>
-                        <div class="dropdown-menu border-0" aria-labelledby="user-options">
-                            {% if request.user.is_authenticated %}
-                                {% if request.user.is_superuser %}
-                                    <a href="" class="dropdown-item">Product Management</a>
-                                {% endif %}
-                                <a href="" class="dropdown-item">My Profile</a>
-                                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-                            {% else %}
-                                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-                            {% endif %}
-                        </div>
-                    </li>
-                    <li class="list-inline-item">
-                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">
-                            <div class="text-center">
-                                <div><i class="fas fa-shopping-cart"></i></div>
-                                <p class="my-0">
-                                    {% if grand_total %}
-                                        ${{ grand_total|floatformat:2 }}
-                                    {% else %}
-                                        Empty
-                                    {% endif %}
-                                </p>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </header>
+              </li>
+              <li>
+                <a class="dropdown-item text-white text-uppercase" href="">FAQ Management
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item text-white text-uppercase" href=""> Newsletter Subscribers
+                </a>
+              </li>
+              {% endif %}
 
-    {% if messages %}
-        <div class="message-container"></div>
-    {% endif %}
+              <li>
+                <a class="dropdown-item text-white text-uppercase" href="">User profile
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item text-white text-uppercase" href="{% url 'account_logout' %}">Sign out
+                </a>
+              </li>
+            </ul>
+          </li>
+          {% else %}
+          Log in
+          </a>
+          <!-- drop down for user that is NOT logged in -->
+          <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser">
+            <li>
+              <a class="dropdown-item text-uppercase" href="{% url 'account_signup' %}">Register
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item text-uppercase" href="{% url 'account_login' %}">Log in
+              </a>
+            </li>
+          </ul>
+          </li>
+          {% endif %}
+          <li>
+            <!-- trolley -->
+            <a href="" class="nav-link
+                  {% if request.resolver_match.url_name == 'view_trolley' %}
+                  text-success active
+                  {% elif request.resolver_match.url_name == 'checkout' %}
+                  text-success active
+                  {% elif request.resolver_match.url_name == 'checkout_success' %}
+                  text-success active
+                  {% else %} text-white {% endif %}">
+              <svg class="bi d-block mx-auto mb-1" width="24" height="24" fill="currentColor">
+                <use xlink:href="#trolley" /></svg>
+              {% if grand_total %}
+              £ {{ grand_total|floatformat:2 }}
+              {% else %}
+              £ 0.00
+              {% endif %}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
-    {% block page_header %}
-    {% endblock %}
+  {% if messages %}
+  <div class="message-container"></div>
+  {% endif %}
 
-    {% block content %}
-    {% endblock %}
+  {% block page_header %}
+  {% endblock %}
 
-    {% block postloadjs %}
-    {% endblock %}
+  {% block content %}
+  {% endblock %}
+
+  {% block postloadjs %}
+  {% endblock %}
 
 
-  </body>
+</body>
+
 </html>
