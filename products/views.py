@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Product, Category
 
+from .forms import ProductForm
+
 # Create your views here.
 
 def all_products(request):
