@@ -204,25 +204,24 @@
           </ul>
           </li>
           {% endif %}
-          <li>
-            <!-- trolley -->
-            <a href="" class="nav-link
-                  {% if request.resolver_match.url_name == 'view_trolley' %}
-                  text-success active
-                  {% elif request.resolver_match.url_name == 'checkout' %}
-                  text-success active
-                  {% elif request.resolver_match.url_name == 'checkout_success' %}
-                  text-success active
-                  {% else %} text-white {% endif %}">
-              <svg class="bi d-block mx-auto mb-1" width="24" height="24" fill="currentColor">
-                <use xlink:href="#trolley" /></svg>
-              {% if grand_total %}
-              £ {{ grand_total|floatformat:2 }}
-              {% else %}
-              £ 0.00
-              {% endif %}
+
+          <!-- cart -->
+          <li class="list-inline-item">
+            <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
+              href="{% url 'view_cart' %}">
+              <div class="text-center">
+                <div><i class="fas fa-shopping-cart"></i></div>
+                <p class="my-0">
+                  {% if grand_total %}
+                  €{{ grand_total }}
+                  {% else %}
+                  Empty
+                  {% endif %}
+                </p>
+              </div>
             </a>
           </li>
+
         </ul>
       </div>
     </div>
