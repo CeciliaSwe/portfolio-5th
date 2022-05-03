@@ -42,17 +42,9 @@ def remove_from_bag(request, item_id):
     """Remove the item from the shopping bag"""
 
     try:
-        size = None
-        if 'product_size' in request.POST:
-            size = request.POST['product_size']
-        cart = request.session.get('cart', {})
 
-        if size:
-            del cart[item_id]['items_by_size'][size]
-            if not cart[item_id]['items_by_size']:
-                cart.pop(item_id)
-        else:
-            cart.pop(item_id)
+        cart = request.session.get('cart', {})
+        cart.pop(item_id)
 
         request.session['cart'] = cart
         return redirect(reverse('view_cart'))
