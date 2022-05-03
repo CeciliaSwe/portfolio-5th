@@ -86,6 +86,8 @@ TEMPLATES = [
     },
 ]
 
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
+
 #from Django alluth documentation
 
 AUTHENTICATION_BACKENDS = (
