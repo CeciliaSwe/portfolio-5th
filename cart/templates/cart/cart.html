@@ -76,14 +76,8 @@
                                 </div>
                             </form>
                             <a class="update-link text-info"><small>Update</small></a>
-                            <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"
-                                data-size="{{ item.size }}"><small>Remove</small></a>
-                            <a href="{% url 'remove_from_bag' item.item_id %}"
-                                class="shadow-lg btn btn-danger text-white rounded-pill">
-                                <svg class="bi mx-auto mb-1" width="18" height="18" fill="currentColor">
-                                    <use xlink:href="#bin" />
-                                </svg>
-                                <p class="d-inline small" title="Remove item from the trolley">Remove2
+                            <a href="{% url 'remove_from_cart' item.item_id %}" class="text-danger float-right">
+                                <p class="d-inline small" title="Remove item from cart">Remove
                                 </p>
                             </a>
 
@@ -98,10 +92,9 @@
                                 </span>
                                 <!-- Delete modal trigger button -->
                                 <span>
-                                    <button type="button" class="btn btn-sm text-danger" data-bs-toggle="modal"
-                                        data-bs-target="#deleteModal">
+                                    <a href="{% url 'remove_from_cart' item.item_id %}" class="text-danger float-right">
                                         <small>Remove <i class="far fa-trash-alt"></i></small>
-                                    </button>
+                                    </a>
                                 </span>
                             </p>
                         </td>
