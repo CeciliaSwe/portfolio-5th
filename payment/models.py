@@ -30,7 +30,7 @@ class Order(models.Model):
         return uuid.uuid4().hex.upper()
 
 
-      def update_total(self):
+    def update_total(self):
         """
         Update the order total each time a line item is added,
         """
