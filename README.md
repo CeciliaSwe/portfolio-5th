@@ -4,6 +4,14 @@ python3 manage.py makemigrations --dry-run
 
 python3 manage.py migrate
 
+git branch "name"
+
+git checkout "name"
+
+git checkout main
+
+git merge "name"
+
 
 
 This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
