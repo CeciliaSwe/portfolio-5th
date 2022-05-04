@@ -3,13 +3,28 @@
 {% load bag_tools %}
 
 {% block extra_css %}
-<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+<link rel="stylesheet" href="{% static 'payment/css/payment.css' %}">
 {% endblock %}
 
 {% block page_header %}
-<div class="container header-container">
+<div class="container">
+
+    <!-- checkout header   -->
+
     <div class="row">
-        <div class="col"></div>
+        <div class="col">
+            <div class="py-5 text-center mb-2">
+                <div class="text-dark mt-5 mb-3">
+                    <img src="{{ MEDIA_URL }}trees-dark.svg" alt="">
+                </div>
+                <h2 class="my-heading-font">Payment
+                </h2>
+                <p class="lead">We need your full address to be able to send you the purchased goods. Please add current
+                    telephone and email address so we can contact you easily.
+                </p>
+                <hr class="my-4">
+            </div>
+        </div>
     </div>
 </div>
 {% endblock %}
@@ -18,16 +33,110 @@
 <div class="overlay"></div>
 <div class="container">
     <div class="row">
-        <div class="col">
-            <hr>
-            <h2 class="logo-font mb-4">Checkout</h2>
-            <hr>
-        </div>
-    </div>
 
-    <!-- order summary   -->
-    <div class="row g-5">
-        <div class="col-md-5 col-lg-6 order-md-last">
+        <!-- order form   -->
+        <div class="col-md-6 col-lg-6">
+            <h4 class="mb-3 my-heading-font">   Your Details
+            </h4>
+            <form action="{% url 'payment' %}" method="POST" id="payment-form">
+                {% csrf_token %}
+                <div class="row g-3">
+                    <div class="col-sm-6">
+                        {{ order_form.first_name | as_crispy_field }}
+                        {{ order_form.last_name | as_crispy_field }}
+                    </div>
+                    <div class="col-sm-6">
+                        {{ order_form.email | as_crispy_field }}
+                    </div>
+                    <div class="col-12">
+                        {{ order_form.phone_number | as_crispy_field }}
+                    </div>
+                    <h4 class="mb-3 my-heading-font">Delivery address
+                    </h4>
+                    <div class="col-12">
+                        {{ order_form.street_address1 | as_crispy_field }}
+                    </div>
+                    <div class="col-12">
+                        {{ order_form.street_address2 | as_crispy_field }}
+                    </div>
+                    <div class="col-12">
+                        {{ order_form.city | as_crispy_field }}
+                    </div>
+                    <div class="col-md-5">
+                        {{ order_form.country | as_crispy_field }}
+                    </div>
+                    <div class="col-md-4">
+                        {{ order_form.county | as_crispy_field }}
+                    </div>
+                    <div class="col-md-3">
+                        {{ order_form.zipcode | as_crispy_field }}
+                    </div>
+                </div>
+                <hr class="my-4">
+                <div class="form-check">
+                    {% if user.is_authenticated %}
+                    <label class="form-check-label" for="id-save-info">Save this delivery information to my profile
+                    </label>
+                    <input class="form-check-input" type="checkbox" id="id-save-info" name="save-info" checked>
+                    {% else %}
+                    <label class="form-check-label" for="id-save-info">
+                        <a class="text-info" href="{% url 'account_signup' %}">Create an account
+                        </a> or
+                        <a class="text-info" href="{% url 'account_login' %}">login
+                        </a> to save this information
+                    </label>
+                    {% endif %}
+                </div>
+                <hr class="my-4">
+                <h4 class="my-4 my-heading-font">Payment
+                </h4>
+                <div class="row gy-3">
+                    <div class="col-12">
+                        <!-- A Stripe card element will go here -->
+                        <div class="mb-3" id="card-element">
+                        </div>
+                        <!-- Used to display form errors -->
+                        <div class="mb-3 text-danger" id="card-errors" role="alert">
+                        </div>
+                        <input type="hidden" value="{{ client_secret }}" name="client_secret">
+                    </div>
+                    <div class="col-md-6 text-center ">
+                        <a href="{% url 'view_cart' %}" class="btn btn-secondary">
+
+                            <span class="font-weight-bold">Back to cart
+                            </span>
+                        </a>
+                    </div>
+                    <div class="col-md-6 text-center ">
+                        <button id="submit-button" class="btn btn-success">
+                            <span class="font-weight-bold">Complete Order
+                            </span>
+                            <span class="icon">
+                                <i class="fas fa-lock">
+                                </i>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="col-12">
+                        <p class="small text-danger my-0">
+                            <span class="icon">
+                                <i class="bi bi-credit-card-2-back-fill">
+                                </i>
+                            </span>
+                            <span>Your card will be charged
+                                <strong>€{{ total}}
+                                </strong>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                <hr class="my-4">
+            </form>
+        </div>
+
+        <!-- order summary   -->
+
+        <div class="col-md-5 col-lg-5 offset-1 order-md-last">
             <h4 class="d-flex justify-content-between align-items-center mb-3">
                 <span class="text-secondary my-heading-font">Order Summary
                 </span>
@@ -59,12 +168,21 @@
                 <li class="list-group-item d-flex justify-content-between">
                     <span>Total (euro)
                     </span>
-                    <strong> €{{ total | floatformat:2 }}
+                    <strong> €{{ total }}
                     </strong>
                 </li>
             </ul>
         </div>
+
     </div>
 
+</div>
 
-        {% endblock %}
+
+
+
+
+
+
+
+{% endblock %}
