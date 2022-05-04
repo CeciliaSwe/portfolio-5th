@@ -43,7 +43,7 @@ def update_cart(request, item_id):
 
     else:
         cart.pop(item_id)
-        messages.info(request, f'Removed {product.name} from your cart')
+        messages.success(request, f'Removed {product.name} from your cart')
 
 
     request.session['cart'] = cart
@@ -54,9 +54,10 @@ def remove_from_cart(request, item_id):
     """Remove the item from the shopping bag"""
 
     try:
-
+        product = Product.objects.get(pk=item_id)
         cart = request.session.get('cart', {})
         cart.pop(item_id)
+        messages.success(request, f' {product.name} was removed from your bag')
 
         request.session['cart'] = cart
         return redirect(reverse('view_cart'))
