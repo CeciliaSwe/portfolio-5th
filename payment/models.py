@@ -30,6 +30,14 @@ class Order(models.Model):
         return uuid.uuid4().hex.upper()
 
 
+      def update_total(self):
+        """
+        Update the order total each time a line item is added,
+        """
+        self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum']
+        self.save()
+
+
 
     def save(self, *args, **kwargs):
         """
