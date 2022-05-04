@@ -10,6 +10,8 @@ git checkout "name"
 
 git checkout main
 
+git reset --hard HEAD
+
 git merge "name"
 
 
