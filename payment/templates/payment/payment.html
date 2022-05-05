@@ -15,7 +15,6 @@
         <div class="col">
             <div class="py-5 text-center mb-2">
                 <div class="text-dark mt-5 mb-3">
-                    <img src="{{ MEDIA_URL }}trees-dark.svg" alt="">
                 </div>
                 <h2 class="my-heading-font">Payment
                 </h2>
@@ -175,16 +174,13 @@
                 </li>
             </ul>
         </div>
-
     </div>
-
 </div>
+{% endblock %}
 
-
-
-
-
-
-
-
+{% block postloadjs %}
+    {{ block.super }}
+    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
+    {{ client_secret|json_script:"id_client_secret" }}
+    <script src="{% static 'payment/js/stripe_elements.js' %}"></script>
 {% endblock %}
