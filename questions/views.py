@@ -1,3 +1,12 @@
+
+"""
+views for questions app
+"""
 from django.shortcuts import render
 
-# Create your views here.
+
+def questions(request):
+    """
+    view to display all questions to the user
+    """
+    return render(request, 'questions/questions.html')
