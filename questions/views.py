@@ -1,8 +1,9 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.views import generic, View
 from django.views.generic.edit import CreateView
 from django.http import HttpResponseRedirect
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from .models import Question
 from .forms import QuestionForm
 
@@ -16,7 +17,25 @@ class QuestionsList(generic.ListView):
     template_name = 'questions/questions.html'
     paginate_by = 5
 
+@login_required
+def manage_questions(request):
+    """
+    view to display all unpublished questions
+    """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only the admins can do that.')
+        return redirect(reverse('questions'))
 
+    question_list = Question.objects.filter(status=0).order_by('-created_on')
+    template = 'questions/questions.html'
+
+    context = {
+        'question_list': question_list,
+    }
+
+    return render(request, template, context)
+
+@login_required
 def add_question(request):
     """
     Add questions to FAQ page
@@ -25,7 +44,6 @@ def add_question(request):
     if request.method == 'POST':
         form = QuestionForm(request.POST, request.FILES)
 
-        print(f'form alone {form}')
 
         if form.is_valid():
            question = form.save()
