@@ -34,21 +34,23 @@
     <div class="row">
 
         <!-- order form   -->
-        <div class="col-md-6 col-lg-6">
-            <h4 class="mb-3 my-heading-font">   Your Details
+        <div class="col-md-6 col-lg-8">
+            <h4 class="mb-3 my-heading-font"> Your Details
             </h4>
             <form action="{% url 'payment' %}" method="POST" id="payment-form">
                 {% csrf_token %}
                 <div class="row g-3">
                     <div class="col-sm-6">
                         {{ order_form.first_name | as_crispy_field }}
-                        {{ order_form.last_name | as_crispy_field }}
                     </div>
                     <div class="col-sm-6">
-                        {{ order_form.email | as_crispy_field }}
+                        {{ order_form.last_name | as_crispy_field }}
                     </div>
-                    <div class="col-12">
+                    <div class="col-6">
                         {{ order_form.phone_number | as_crispy_field }}
+                    </div>
+                    <div class="col-6">
+                        {{ order_form.email| as_crispy_field }}
                     </div>
                     <h4 class="mb-3 my-heading-font">Delivery address
                     </h4>
@@ -58,18 +60,19 @@
                     <div class="col-12">
                         {{ order_form.street_address2 | as_crispy_field }}
                     </div>
-                    <div class="col-12">
-                        {{ order_form.city | as_crispy_field }}
-                    </div>
-                    <div class="col-md-5">
-                        {{ order_form.country | as_crispy_field }}
-                    </div>
-                    <div class="col-md-4">
-                        {{ order_form.county | as_crispy_field }}
-                    </div>
-                    <div class="col-md-3">
+                    <div class="col-6">
                         {{ order_form.zipcode | as_crispy_field }}
                     </div>
+                    <div class="col-6">
+                        {{ order_form.city | as_crispy_field }}
+                    </div>
+                    <div class="col-md-6">
+                        {{ order_form.county| as_crispy_field }}
+                    </div>
+                    <div class="col-md-6">
+                        {{ order_form.country | as_crispy_field }}
+                    </div>
+
                 </div>
                 <hr class="my-4">
                 <div class="form-check">
@@ -101,25 +104,25 @@
                         <input type="hidden" value="{{ client_secret }}" name="client_secret">
                     </div>
                     <div class="submit-button text-right mt-5 mb-2">
-						<a href="{% url 'view_cart' %}" class="btn btn-secondary rounded-0">
-							<span class="icon">
-								<i class="fas fa-chevron-left"></i>
-							</span>
-							<span class="font-weight-bold text-uppercase">Back to Cart</span>
-						</a>
-						<button id="submit-button" class="btn btn-primary text-uppercase rounded-0">
-							<span class="font-weight-bold">Complete Order</span>
-							<span class="icon">
-								<i class="fas fa-lock"></i>
-							</span>
-						</button>
-						<p class="small text-danger my-0">
-							<span class="icon">
-								<i class="fas fa-exclamation-circle"></i>
-							</span>
-							<span>Your card will be charged <strong>${{ total|floatformat:2 }}</strong></span>
-						</p>
-					</div>
+                        <a href="{% url 'view_cart' %}" class="btn btn-secondary rounded-0">
+                            <span class="icon">
+                                <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="font-weight-bold text-uppercase">Back to Cart</span>
+                        </a>
+                        <button id="submit-button" class="btn btn-primary text-uppercase rounded-0">
+                            <span class="font-weight-bold">Complete Order</span>
+                            <span class="icon">
+                                <i class="fas fa-lock"></i>
+                            </span>
+                        </button>
+                        <p class="small text-danger my-0">
+                            <span class="icon">
+                                <i class="fas fa-exclamation-circle"></i>
+                            </span>
+                            <span>Your card will be charged <strong>${{ total|floatformat:2 }}</strong></span>
+                        </p>
+                    </div>
 
                     <div class="col-12">
                         <p class="small text-danger my-0">
@@ -137,50 +140,51 @@
 
         <!-- order summary   -->
 
-        <div class="col-md-5 col-lg-5 offset-1 order-md-last">
-            <h4 class="d-flex justify-content-between align-items-center mb-3">
-                <span class="text-secondary my-heading-font">Order Summary
-                </span>
-                <span class="badge bg-secondary ">{{ product_count }}
-                </span>
-            </h4>
-            <ul class="list-group mb-3">
-                {% for item in cart_items %}
-                <li class="list-group-item d-flex justify-content-between lh-sm">
-                    <div class="col-4 mb-1">
-                        <a href="{% url 'product_detail' item.product.id %}">
-                            {% if item.product.image %}
-                            <img class="w-100" src="{{ item.product.image.url }}" alt="{{ product.name }}">
-                            {% else %}
-                            <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
-                            {% endif %}
-                        </a>
-                    </div>
-                    <div>
-                        <h6 class="my-0">{{item.product.name}} ({{ item.quantity }})
-                        </h6>
-
-                    </div>
-                    <span class="text-muted"> €{{ item.product.price | calc_subtotal:item.quantity }}
+            <div class="col-md-4 col-lg-4 order-md-last">
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="text-secondary my-heading-font">Order Summary
                     </span>
-                </li>
-                {% endfor %}
-
-                <li class="list-group-item d-flex justify-content-between">
-                    <span>Total (euro)
+                    <span class="badge bg-secondary ">{{ product_count }}
                     </span>
-                    <strong> €{{ total }}
-                    </strong>
-                </li>
-            </ul>
-        </div>
+                </h4>
+                <ul class="list-group mb-3">
+                    {% for item in cart_items %}
+                    <li class="list-group-item d-flex justify-content-between lh-sm">
+                        <div class="col-4 mb-1">
+                            <a href="{% url 'product_detail' item.product.id %}">
+                                {% if item.product.image %}
+                                <img class="w-100" src="{{ item.product.image.url }}" alt="{{ product.name }}">
+                                {% else %}
+                                <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                                {% endif %}
+                            </a>
+                        </div>
+                        <div>
+                            <h6 class="my-0">{{item.product.name}} ({{ item.quantity }})
+                            </h6>
+
+                        </div>
+                        <span class="text-muted"> €{{ item.product.price | calc_subtotal:item.quantity }}
+                        </span>
+                    </li>
+                    {% endfor %}
+
+                    <li class="list-group-item d-flex justify-content-between">
+                        <span>Total (euro)
+                        </span>
+                        <strong> €{{ total }}
+                        </strong>
+                    </li>
+                </ul>
+            </div>
+
     </div>
 </div>
 {% endblock %}
 
 {% block postloadjs %}
-    {{ block.super }}
-    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
-    {{ client_secret|json_script:"id_client_secret" }}
-    <script src="{% static 'payment/js/stripe_elements.js' %}"></script>
+{{ block.super }}
+{{ stripe_public_key|json_script:"id_stripe_public_key" }}
+{{ client_secret|json_script:"id_client_secret" }}
+<script src="{% static 'payment/js/stripe_elements.js' %}"></script>
 {% endblock %}
