@@ -9,4 +9,5 @@ urlpatterns = [
     path('', views.QuestionsList.as_view(), name='questions'),
     path('manage/', views.manage_questions, name='manage_questions'),
     path('add/', views.add_question, name='add_question'),
+    path('edit/<int:question_id>/', views.edit_question, name='edit_question'),
 ]
