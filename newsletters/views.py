@@ -1,4 +1,7 @@
+from django.conf import settings
+from django.contrib import messages
 from django.shortcuts import render
+from django.core.mail import send_mail
 
 from .models import NewsletterUser
 from .forms import NewsletterUserSignUpForm
@@ -10,9 +13,14 @@ def newsletter_signup(request):
     if form.is_valid():
         instance = form.save(commit=False)
         if NewsletterUser.objects.filter(email=instance.email).exists():
-            print('Sorry! This email already exist')
+            messages.warning(request, 'Hey, you are alredy signed up, thanks!')
         else:
             instance.save()
+            messages.success(request, 'You have successfully signed up!')
+            subject = "Welcome to Active8!"
+            to_email = [instance.email]
+            signup_message = """Thank you for signing up! Let's go for an adventure"""
+            send_mail(subject=subject, from_email='from@active8.com', recipient_list=to_email, message=signup_message, fail_silently=False)
 
     context = {
         'form' : form,
@@ -28,8 +36,13 @@ def newsletter_unsubscribe(request):
         instance = form.save(commit=False)
         if NewsletterUser.objects.filter(email=instance.email).exists():
             NewsletterUser.objects.filter(email=instance.email).delete()
+            messages.success(request, 'You have successfully unsubscribed!')
+            subject = "Sorry you're leaving!"
+            to_email = [instance.email]
+            unsubscribe_message = """Come back at any time for more adventures"""
+            send_mail(subject=subject, from_email='from@active8.com', recipient_list=to_email, message=unsubscribe_message, fail_silently=False)
         else:
-            print('Sorry but we did not find your email adress')
+            messages.warning(request, 'Email not found - are you really signed up?')
 
     context = {
         'form' : form,

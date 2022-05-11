@@ -108,6 +108,8 @@ SITE_ID = 1
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+#EMAIL.HOST.USER = "cedergren.cecilia@gmail.com"
+
 
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 

@@ -1,0 +1,8 @@
+<html>
+<head>
+</head>
+<body>
+<h2>Welcome to the Active8 Newsletter</h2>
+<p>Thank you for signing up! Let's go for an adventure</p>
+</body>
+</html>
