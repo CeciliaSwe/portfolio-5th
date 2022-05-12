@@ -126,6 +126,18 @@ body {
 }
 
 
+/* Index
+  -------------------------------------------------- */
+#hero-image {
+    height: 52vh;
+    background: url("/media/treasure-map.png") no-repeat center center;
+    clear: both;
+    background-size: contain;
+    margin-bottom: 0px;
+    position: relative;
+}
+
+
 /* NAVBAR FOR LARGE SCREENS
   -------------------------------------------------- */
 

@@ -2,26 +2,60 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
     </div>
-{% endblock %}
+</div>
 
+{% endblock %}
 {% block content %}
-    <div class="container h-100">
-        <div class="row h-100">
-            <div class="col-3 my-auto">
-                <h1 class="display-6 logo-font text-black">
-                    Are you ready to Active8?
-                </h1>
-                <div class="my-5">
-                    <h4>
-                        <a href="" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Explore!</a>
-                    </h4>
+<div class="container h-100">
+    <div class="row h-100">
+        <!--First section -->
+        <div class="col-10">
+            <div id="hero-image">
+                <div id="hero-text-box">
+                    <h2>Dog leadership courses for the whole family! </h2>
                 </div>
             </div>
         </div>
+        <div class="col-2">
+            <h2 id="hero-text-out">Dog leadership courses!</h2>
+        </div>
     </div>
+
+    <!-- Second section with philosophy, more info and book button -->
+
+    <div class="row mt-3">
+        <div class="col-4">
+            <h4>Why do we use it?
+            </h4>
+            <p>
+                It is a long established fact that a reader will be distracted by the readable content of a page
+                when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
+                distribution of letters, as opposed to using 'Content here, content here', making it look like
+                readable English.
+            </p>
+        </div>
+        <div class="col-4">
+            <h4>What is Lorem Ipsum?</h4>
+            <p>
+
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book. It has survived not only five centuries,
+                but also the leap into electronic typesetting, remaining essentially unchanged.
+            </p>
+        </div>
+        <div class="col-4">
+
+            <a class="btn btn-lg btn-outline-secondary rounded-0" href="{% url 'products' %}" aria-label="">
+                To adventures
+            </a>
+        </div>
+    </div>
+
+</div>
+</div>
 {% endblock %}
