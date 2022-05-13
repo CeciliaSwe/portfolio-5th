@@ -128,13 +128,29 @@ body {
 
 /* Index
   -------------------------------------------------- */
-#hero-image {
-    height: 52vh;
-    background: url("/media/treasure-map.png") no-repeat center center;
+.hero-image {
+    height: 50vh;
+    background: url("/media/djungle_tiny.jpg") no-repeat center center;
+    background-size: cover;
     clear: both;
-    background-size: contain;
-    margin-bottom: 0px;
+    margin-bottom: 5vh;
     position: relative;
+}
+
+#hero-text-box {
+    color: #EBECF1;
+    font-family: 'Raleway', sans-serif !important;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 4px;
+    width: 400px;
+    height: 200px;
+    padding-top: 40px;
+    padding-left: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    top: 22%;
+    right: 10%;
+    position: absolute;
 }
 
 
