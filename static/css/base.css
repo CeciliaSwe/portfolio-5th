@@ -14,6 +14,13 @@ body {
 
 }
 
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+}
+
 /* from Bulma */
 .icon {
     align-items: center;
