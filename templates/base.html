@@ -67,7 +67,6 @@
               </div>
             </a>
           </li>
-
           <!-- Shop dropdown -->
           <li class="list-inline-item dropdown">
             <a class="text-white nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
@@ -82,9 +81,6 @@
               <a href="{% url 'products' %}?category=kids" class="dropdown-item">Kids</a>
               <a href="{% url 'products' %}?category=adolescents" class="dropdown-item">Adolescents</a>
               <a href="{% url 'products' %}?category=Adults" class="dropdown-item">Adults</a>
-
-
-
             </div>
           </li>
           <li class="list-inline-item">
@@ -98,8 +94,7 @@
               </div>
             </a>
           </li>
-
-          <!-- user dropdown option 1-->
+          <!-- user dropdown-->
           <li class="list-inline-item dropdown">
             <a class="text-white nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
               aria-expanded="false">
@@ -117,6 +112,7 @@
               {% if request.user.is_authenticated %}
               {% if request.user.is_superuser %}
               <a href="" class="dropdown-item">Product Management</a>
+              <a href="" class="dropdown-item">FAQ Management</a>
               {% endif %}
               <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
               <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
@@ -127,8 +123,6 @@
             </div>
           </li>
           <li>
-
-
             <!-- cart -->
           <li class="list-inline-item">
             <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-white{% endif %} nav-link"
@@ -145,7 +139,6 @@
               </div>
             </a>
           </li>
-
         </ul>
       </div>
     </div>
@@ -176,19 +169,19 @@
   {% endblock %}
 
   <!-- Footer -->
-  <footer class="footer mt-auto py-3 bg-dark sticky-bottom">
+  <footer class="footer mt-auto py-3 bg-dark sticky-bottom text-white">
     <p class="m-0 text-center text-white">Active8</p>
     <p class="m-0 text-center text-white">Follow us:
-      <a target="_blank" href="https://youtube.com" rel="noopener"
+      <a class="text-white" target="_blank" href="https://youtube.com" rel="noopener"
         aria-label="Visit our YouTube Channel! (opens in new tab)">
         <i class="fab fa-youtube-square ms-3"></i></a>
-      <a target="_blank" href="https://instagram.com" rel="noopener"
+      <a class="text-white" target="_blank" href="https://instagram.com" rel="noopener"
         aria-label="Visit our >Instagram Page! (opens in new tab)">
         <i class="fab fa-instagram-square ms-3"></i></a>
-      <a target="_blank" href="https://facebook.com" rel="noopener"
+      <a class="text-white" target="_blank" href="https://facebook.com" rel="noopener"
         aria-label="Visit our Facebook page! (opens in new tab)">
         <i class="fab fa-facebook-square ms-3"></i></a>
-      <a target="_blank" href="https://twitter.com" rel="noopener"
+      <a class="text-white" target="_blank" href="https://twitter.com" rel="noopener"
         aria-label="Visit our Twitter Page! (opens in new tab)">
         <i class="fab fa-twitter-square ms-3"></i></a>
     </p>

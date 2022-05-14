@@ -43,13 +43,6 @@ body {
     z-index: 99999999999;
 }
 
-.custom-toast {
-    overflow: visible;
-}
-
-.toast-capper {
-    height: 2px;
-}
 
 /* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
 .arrow-up {
@@ -63,7 +56,7 @@ body {
     right: 36px;
 }
 
-/* Convenience classes - colors copied from Bootstrap */
+/* Convenience classes - colors copied from Bootstrap
 .arrow-primary {
     border-bottom-color: #007bff !important;
 }
@@ -96,6 +89,8 @@ body {
     border-bottom-color: #343a40 !important;
 }
 
+*/
+
 .bag-notification-wrapper {
     height: 100px;
     overflow-x: hidden;
@@ -113,12 +108,17 @@ body {
     position: relative;
 }
 
-#hero-text-box {
+.hero-text {
     color: #EBECF1;
     font-family: 'Raleway', sans-serif !important;
     text-transform: uppercase;
     text-align: center;
     letter-spacing: 4px;
+
+}
+
+.btn-text-box {
+
     width: 400px;
     height: 200px;
     padding-top: 40px;
@@ -128,6 +128,7 @@ body {
     right: 10%;
     position: absolute;
 }
+
 
 .index-box {
 
@@ -142,8 +143,7 @@ body {
 
 
 
-/* NAVBAR FOR LARGE SCREENS
-  -------------------------------------------------- */
+/* navbar */
 
 i:hover {
     color: #40b5bc;
