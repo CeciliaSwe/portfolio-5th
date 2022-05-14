@@ -35,8 +35,8 @@
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
   </script>
 
-   <!-- Stripe -->
-   <script src="https://js.stripe.com/v3/"></script>
+  <!-- Stripe -->
+  <script src="https://js.stripe.com/v3/"></script>
   {% endblock %}
 
   {% block extra_js %}
@@ -145,7 +145,7 @@
           <li>
 
 
-          <!-- cart -->
+            <!-- cart -->
           <li class="list-inline-item">
             <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
               href="{% url 'view_cart' %}">
@@ -169,27 +169,46 @@
 
   {% if messages %}
   <div class="message-container"></div>
-      {% for message in messages %}
-          {% with message.level as level %}
-              {% if level == 40 %}
-                  {% include 'includes/toasts/toast_error.html' %}
-              {% elif level == 30 %}
-                  {% include 'includes/toasts/toast_warning.html' %}
-              {% elif level == 25 %}
-                  {% include 'includes/toasts/toast_success.html' %}
-              {% else %}
-                  {% include 'includes/toasts/toast_info.html' %}
-              {% endif %}
-          {% endwith %}
-      {% endfor %}
+  {% for message in messages %}
+  {% with message.level as level %}
+  {% if level == 40 %}
+  {% include 'includes/toasts/toast_error.html' %}
+  {% elif level == 30 %}
+  {% include 'includes/toasts/toast_warning.html' %}
+  {% elif level == 25 %}
+  {% include 'includes/toasts/toast_success.html' %}
+  {% else %}
+  {% include 'includes/toasts/toast_info.html' %}
+  {% endif %}
+  {% endwith %}
+  {% endfor %}
   </div>
-{% endif %}
+  {% endif %}
 
   {% block page_header %}
   {% endblock %}
 
   {% block content %}
   {% endblock %}
+
+  <!-- Footer -->
+  <footer class="footer mt-auto py-3 bg-dark sticky-bottom">
+    <p class="m-0 text-center text-white">Active8</p>
+    <p class="m-0 text-center text-white">Follow us:
+        <a target="_blank" href="https://youtube.com" rel="noopener"
+            aria-label="Visit our YouTube Channel! (opens in new tab)">
+            <i class="fab fa-youtube-square ms-3"></i></a>
+        <a target="_blank" href="https://instagram.com" rel="noopener"
+            aria-label="Visit our >Instagram Page! (opens in new tab)">
+            <i class="fab fa-instagram-square ms-3"></i></a>
+        <a target="_blank" href="https://facebook.com" rel="noopener"
+                aria-label="Visit our Facebook page! (opens in new tab)">
+                <i class="fab fa-facebook-square ms-3"></i></a>
+        <a target="_blank" href="https://twitter.com" rel="noopener"
+            aria-label="Visit our Twitter Page! (opens in new tab)">
+            <i class="fab fa-twitter-square ms-3"></i></a>
+    </p>
+</footer>
 
   {% block postloadjs %}
   <script type="text/javascript">
