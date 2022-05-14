@@ -17,7 +17,9 @@
   {% block corecss %}
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&family=Water+Brush&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'css/base.css' %}">
   {% endblock %}
 
@@ -48,26 +50,27 @@
 <body>
   <div class="px-3 py-2 bg-dark text-white d-none d-md-block">
     <div class="container">
-      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start my-heading-font">
+      <div class="d-flex flex-wrap align-items-center justify-content-between">
         <a href="{% url 'home' %}"
           class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
-          <img src="" alt="">
           <h1 class="my-heading-font ps-2 mr-5 left">Active8</h1>
         </a>
-        <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
-          <li>
-            <a href="{% url 'home' %}" class="nav-link text-uppercase
-                {% if request.resolver_match.url_name == 'home' %}
-                text-success active {% else %} text-white {% endif %}
-                  ">
-              <svg class="bi d-block mx-auto mb-1" width="24" height="24" fill="currentColor">
-                <use xlink:href="#home" /></svg>
-              Home
+        <ul class="nav col-12 col-lg-auto my-2 justify-content-end my-md-0 text-small">
+          <li class="list-inline-item">
+            <a class="text-white nav-link"
+              href="{% url 'home' %}">
+              <div class="text-center">
+                <div><i class="fas fa-home"></i></div>
+                <p class="my-0">
+                  Home
+                </p>
+              </div>
             </a>
           </li>
+
           <!-- Shop dropdown -->
           <li class="list-inline-item dropdown">
-            <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
+            <a class="text-white nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
               aria-expanded="false">
               <div class="text-center">
                 <div><i class="fas fa-store-alt"></i></div>
@@ -84,40 +87,21 @@
 
             </div>
           </li>
-          <li>
-            <a href="{% url 'products' %}" class="nav-link text-uppercase">
-              <svg class="bi d-block mx-auto mb-1" width="24" height="24" fill="currentColor">
-                <use xlink:href="#shop" /></svg>
-              Shop
+          <li class="list-inline-item">
+            <a class="text-white nav-link"
+              href="{% url 'questions' %}">
+              <div class="text-center">
+                <div><i class="fas fa-question"></i></div>
+                <p class="my-0">
+                  FAQ
+                </p>
+              </div>
             </a>
           </li>
-          <li>
-            <a href="{% url 'products' %}" class="nav-link text-uppercase">
-              <svg class="bi d-block mx-auto mb-1" width="24" height="24" fill="currentColor">
-                <use xlink:href="#faq" /></svg>
-              FAQ
-            </a>
-          </li>
-          <li>
-            <a href="#" class="nav-link text-white dropdown-toggle text-uppercase" id="dropdownFind"
-              data-bs-toggle="dropdown" aria-expanded="false">
-              <svg class="bi d-block mx-auto mb-1" width="24" height="24" fill="currentColor">
-                <use xlink:href="#find" /></svg>
-              Find
-            </a>
-            <div class="dropdown-menu text-small bg-dark text-white text-uppercase" aria-labelledby="dropdownFind">
-              <form class="form" method="GET" action="">
-                <div class="input-group p-3">
-                  <input type="text" class="search-form form-control" name="q" placeholder="Search..."
-                    aria-label="Search">
-                  <button type="submit" class="btn btn-sm btn-secondary text-white">Find</button>
-                </div>
-              </form>
-            </div>
-          </li>
+
           <!-- user dropdown option 1-->
           <li class="list-inline-item dropdown">
-            <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
+            <a class="text-white nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
               aria-expanded="false">
               <div class="text-center">
                 <div><i class="fas fa-user fa-lg"></i></div>
@@ -147,7 +131,7 @@
 
             <!-- cart -->
           <li class="list-inline-item">
-            <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
+            <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-white{% endif %} nav-link"
               href="{% url 'view_cart' %}">
               <div class="text-center">
                 <div><i class="fas fa-shopping-cart"></i></div>
@@ -195,20 +179,20 @@
   <footer class="footer mt-auto py-3 bg-dark sticky-bottom">
     <p class="m-0 text-center text-white">Active8</p>
     <p class="m-0 text-center text-white">Follow us:
-        <a target="_blank" href="https://youtube.com" rel="noopener"
-            aria-label="Visit our YouTube Channel! (opens in new tab)">
-            <i class="fab fa-youtube-square ms-3"></i></a>
-        <a target="_blank" href="https://instagram.com" rel="noopener"
-            aria-label="Visit our >Instagram Page! (opens in new tab)">
-            <i class="fab fa-instagram-square ms-3"></i></a>
-        <a target="_blank" href="https://facebook.com" rel="noopener"
-                aria-label="Visit our Facebook page! (opens in new tab)">
-                <i class="fab fa-facebook-square ms-3"></i></a>
-        <a target="_blank" href="https://twitter.com" rel="noopener"
-            aria-label="Visit our Twitter Page! (opens in new tab)">
-            <i class="fab fa-twitter-square ms-3"></i></a>
+      <a target="_blank" href="https://youtube.com" rel="noopener"
+        aria-label="Visit our YouTube Channel! (opens in new tab)">
+        <i class="fab fa-youtube-square ms-3"></i></a>
+      <a target="_blank" href="https://instagram.com" rel="noopener"
+        aria-label="Visit our >Instagram Page! (opens in new tab)">
+        <i class="fab fa-instagram-square ms-3"></i></a>
+      <a target="_blank" href="https://facebook.com" rel="noopener"
+        aria-label="Visit our Facebook page! (opens in new tab)">
+        <i class="fab fa-facebook-square ms-3"></i></a>
+      <a target="_blank" href="https://twitter.com" rel="noopener"
+        aria-label="Visit our Twitter Page! (opens in new tab)">
+        <i class="fab fa-twitter-square ms-3"></i></a>
     </p>
-</footer>
+  </footer>
 
   {% block postloadjs %}
   <script type="text/javascript">
