@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
+import dj_database_url
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -129,15 +130,21 @@ LOGIN_REDIRECT_URL = '/'
 
 WSGI_APPLICATION = 'portfolio_5th.wsgi.application'
 
+#postgres://tvosqzfvwfholn:f81ec80a507c06d27e6f11f895d2ee48aeb981e7c2123d5b10039dd9e330b307@ec2-52-212-228-71.eu-west-1.compute.amazonaws.com:5432/dfq0goarno61t9
 
 # Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
+
+#DATABASES = {
+    #'default': {
+        #'ENGINE': 'django.db.backends.sqlite3',
+        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    #}
+#}
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.parse('postgres://tvosqzfvwfholn:f81ec80a507c06d27e6f11f895d2ee48aeb981e7c2123d5b10039dd9e330b307@ec2-52-212-228-71.eu-west-1.compute.amazonaws.com:5432/dfq0goarno61t9')
+
 }
 
 
