@@ -29,10 +29,22 @@
                 <a href="{{ product.image.url }}" target="_blank">
                     <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
                 </a>
+                {% if request.user.is_superuser %}
+                <small class="ml-3">
+                    <a href="{% url 'edit_product' product.id %}">Edit</a> |
+                    <a class="text-danger" href="#">Delete</a>
+                </small>
+                {% endif %}
                 {% else %}
                 <a href="">
                     <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                 </a>
+                {% if request.user.is_superuser %}
+                <small class="ml-3">
+                    <a href="{% url 'edit_product' product.id %}"><i class="fas fa-pen"></i> Edit</a> |
+                    <a class="text-danger" href="#"><i class="fas fa-trash"></i> Delete</a>
+                </small>
+                {% endif %}
                 {% endif %}
             </div>
         </div>
@@ -85,6 +97,7 @@
                                 value="Add to Cart">
                         </div>
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
+
                     </div>
                 </form>
             </div>
