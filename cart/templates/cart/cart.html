@@ -69,7 +69,7 @@
                             </td>
                             <td class="py-3 w-25">
                                 <div class="row">
-                                    <form class="form update-form col-6" method="POST"
+                                    <form class="form update-form" method="POST"
                                         action="{% url 'update_cart' item.item_id %}">
                                         {% csrf_token %}
                                         <div class="form-group">
@@ -100,7 +100,7 @@
                                         </div>
                                     </form>
                                 </div>
-                                <a class="update-link text-info"><small>Update</small></a>
+
 
 
                             </td>
@@ -109,10 +109,9 @@
                             </td>
                             <td class="py-3">
                                 <p class="my-0">
-                                    <span class="btn btn-sm">
-                                        <a class="update-link"><small>Update <i class="fas fa-pen"></i></small></a>
+                                    <span>
+                                        <a class="update-link text-info"><small>Update</small></a>
                                     </span>
-                                    <!-- Delete modal trigger button -->
                                     <span>
                                         <a href="{% url 'remove_from_cart' item.item_id %}" class="text-danger float-right">
                                             <small>Remove <i class="far fa-trash-alt"></i></small>
@@ -128,7 +127,7 @@
                         </p>
                         <a href="{% url 'products' %}" class="btn btn-custom rounded-2">
 
-                            Back to the shop
+                            Back to shop
                         </a>
                         {% endif %}
                 </div>
