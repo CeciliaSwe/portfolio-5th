@@ -32,6 +32,28 @@ body {
     color: white;
 }
 
+.btn-custom {
+    background: #40b5bc;
+    color: #343a40
+}
+
+.btn-custom:hover {
+    background: #339096;
+    color: #343a40;
+}
+
+.btn-custom-secondary {
+    background: white;
+    color: #343a40;
+    border: 1px solid #40b5bc;
+}
+
+.btn-custom-secondary:hover {
+    background: #D8F0F1;
+    color: #343a40;
+    border: 1px solid #40b5bc;
+}
+
 
 
 /* bootstrap toasts */
