@@ -1,1 +1,1 @@
-web: gunicorn p5-walkthrough.wsgi:application
+web: gunicorn portfolio-5th.wsgi:application
