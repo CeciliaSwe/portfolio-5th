@@ -24,7 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', '*')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEVELOPMENT' in os.environ
+
+#DEBUG = 'DEVELOPMENT' in os.environ
+DEBUG = True
 
 ALLOWED_HOSTS = ['active8-adventures.herokuapp.com', 'localhost']
 
@@ -130,10 +132,11 @@ LOGIN_REDIRECT_URL = '/'
 
 WSGI_APPLICATION = 'portfolio-5th.wsgi.application'
 
-#postgres://tvosqzfvwfholn:f81ec80a507c06d27e6f11f895d2ee48aeb981e7c2123d5b10039dd9e330b307@ec2-52-212-228-71.eu-west-1.compute.amazonaws.com:5432/dfq0goarno61t9
+
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
+
 
 if 'DATABASE_URL' in os.environ:
     DATABASES = {
@@ -146,8 +149,6 @@ else:
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
-
-
 
 
 # Password validation
