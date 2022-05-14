@@ -6,7 +6,7 @@
 
 {% block content %}
 
-<div class="container">
+<div class="container h-100 mb-5">
   <div class="row">
     <div class="col-md-8 offset-md-2 mt-5">
       <div class="card mb-4 mt-5">
@@ -21,12 +21,12 @@
           <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
             {% csrf_token %}
             <table>
-              {{ form }}
+              {{ form | crispy  }}
             </table>
             {% if redirect_field_value %}
             <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
             {% endif %}
-            <button class="btn btn-outline-secondary rounded-0" type="submit">{% trans "Sign Up" %} &raquo;</button>
+            <button class="btn btn-custom rounded-2" type="submit">{% trans "Sign Up" %} &raquo;</button>
           </form>
 
 

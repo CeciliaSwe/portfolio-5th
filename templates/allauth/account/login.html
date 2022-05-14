@@ -7,11 +7,11 @@
 
 {% block content %}
 
-<div class="container">
+<div class="container h-100">
   <div class="row">
-    <div class="col-md-8 offset-md-2 mt-5 card-outer">
+    <div class="col-md-6 offset-md-3 mt-5 ">
       <div class="card mb-4 mt-5">
-        <div class="card-body workout-card">
+        <div class="card-body">
 
           <h1>{% trans "Sign In" %}</h1>
 
@@ -32,7 +32,7 @@
               <a class="button secondaryAction"
                 href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
             </div>
-            <button class="btn btn-outline-secondary rounded-0" type="submit">{% trans "Sign In" %}</button>
+            <button class="btn btn-custom rounded-2" type="submit">{% trans "Sign In" %}</button>
           </form>
         </div>
       </div>
