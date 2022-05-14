@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-8*08$t_3*m84(9_eqphypzdp*rw80hgsk49pm-50^7)4u02400
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+['active8-adventures.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -135,17 +135,19 @@ WSGI_APPLICATION = 'portfolio_5th.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-#DATABASES = {
-    #'default': {
-        #'ENGINE': 'django.db.backends.sqlite3',
-        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    #}
-#}
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
 
-DATABASES = {
-    'default': dj_database_url.parse('postgres://tvosqzfvwfholn:f81ec80a507c06d27e6f11f895d2ee48aeb981e7c2123d5b10039dd9e330b307@ec2-52-212-228-71.eu-west-1.compute.amazonaws.com:5432/dfq0goarno61t9')
 
-}
 
 
 # Password validation
