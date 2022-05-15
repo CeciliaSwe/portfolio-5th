@@ -17,7 +17,7 @@ class Question(models.Model):
                                related_name="questions")
     created_on = models.DateTimeField(auto_now=True, editable=False)
     updated_on = models.DateTimeField(auto_now=True, editable=False)
-    status = models.IntegerField(choices=STATUS_CHOICES, default=0)
+    status = models.IntegerField(choices=STATUS_CHOICES, default=0, blank=True)
 
     class Meta:
         """
