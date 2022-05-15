@@ -112,7 +112,8 @@ Github Issues were used to create User Stories and group them according to MoSCo
 - Allow users to search for products
 - Allow users to add favorite products for later
 - Allow user to login via social media
-- Allow users to
+- Allow users to sort products by difficulty, by price etc.
+- Allow users to leave reviews on products they have purchased
 
 ##### Return to [top](#active8)
 
@@ -171,9 +172,17 @@ An MS Excel workbook detailing these tests and outcomes can be found [here]()
 
 #### Resolved Bugs
 
+- Add to cart functionality not functioning. Resolved by
+- Form input fields visible to all when intended for superusers only. Resolved by restarting the GitPod environment
+- Delete from cart functionality not functioning. Resolved by
+
 
 
 #### Unresolved bugs
+
+- Update cart functionality not functioning.
+- Save info box not functioning
+- Footer does not stay at bottom of screen
 
 
 
