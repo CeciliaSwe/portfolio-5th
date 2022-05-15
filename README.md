@@ -1,122 +1,344 @@
-python3 manage.py runserver
+# Active8
 
-python3 manage.py makemigrations --dry-run
+## Purpose
+Active8 is an eCommerce shop for people looking for an at-home adventure. Any user can view products, shop and sign up for a newsletter, but only registered users can add questions and have their orders saves to their profiles.
 
-python3 manage.py migrate
+A full list of technologies used can be found in the technologies section of this document. Note that GitHub as of March 2021 automatically creates a Table of Contents for the README file.
 
-git branch "name"
+## Active8 Responsive Website
 
-git checkout "name"
-
-git checkout main
-
-git reset --hard HEAD
-
-git merge "name"
+![Responsive](#)
 
 
+[Link to deployed site](https://active8-advenstures.herokuapp.com/)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+## UX
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+This website was created to showcase my knowledge in Fullstack Development eCommernce and to provide users with a place to browse for and but adventures.
 
-## Gitpod Reminders
+### User Stories:
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+Github issues were used to record the user stories. Stories were categorized into different priorities: “Must have”, “Should Have” and “Could Have”.
 
-`python3 -m http.server`
+#### Site administrator:
 
-A blue button should appear to click: _Make Public_,
+-
 
-Another blue button should appear to click: _Open Browser_.
+#### New users:
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+-
 
-A blue button should appear to click: _Make Public_,
 
-Another blue button should appear to click: _Open Browser_.
+#### Could haves (not implemented yet)
+-
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+### Wireframes
 
-To log into the Heroku toolbelt CLI:
+Wireframes were created with Balsamiq and are uploaded to a separate folder - [View](#). The project was developed from the initial wireframes and some modifications were made during the development process for improved usability and user experience.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+### Design
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+#### Imagery
 
-------
+Images are from Shutterstock. It does make use of Font Awesome icons for visual enhancement.
 
-## Release History
+#### Typography
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+The font used for my website is "Water Brush" for the logo part and Raleway for main site. The font is provided by Google Fonts.
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+#### Colour scheme
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+I chose a light theme with dark header and footer. A bright turquoise is used for details/buttons for contrast.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+#### Model
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+An initial models was created with and is uploaded to a separate folder along with ERDs. ERDs have been modified along the way and final versions can be viewed here - [View]()
+The final models has minor changes (such as field type) for usability purposes, but the overall structure has been adhered to.
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+#### Agile Methodology
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+Github Issues were used to create User Stories and group them according to MoSCoW prioritization technique. GitHub Projects and Kanban board was used to visualize and execute the agile methodology. The issues are currently in two categories: “Done” and “For next release”.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+## Features
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+### Existing Features
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+#### Navbar and footer
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+- Navbar and footer are using Bootstrap components and are adjusted to the needs of the project.
+![Navbar](#)
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+![Footer](#)
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+##### Home page
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+- Home page consists of a Welcome Hero image with a short message to view advenstures along with 3 info boxes.
+![Home]()
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+![Home]()
 
-------
 
-## FAQ about the uptime script
+#### Products
 
-**Why have you added this script?**
+- Clicking "Come join our adventures" will take the user to the products page and display all products. Navigating to products from the navbar (Shop dropdown) provides the user with the option to display all advenstures, or to filter based on indended end user age.
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+![Products]()
 
-**How will this affect me?**
+#### Product details
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+#### FAQ
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+#### Cart
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+#### Payment
 
-**So….?**
+#### Newsletter
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+#### CRUD functionality
 
-**Can I opt out?**
+#### Signup / Login / Logout
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+- Users can signup to gain access to all features
+
+![Signup]()
+
+#### Toasts
+
+
+
+
+### Features Left to Implement
+
+- Allow users to search for products
+- Allow users to add favorite products for later
+- Allow user to login via social media
+- Allow users to
+
+##### Return to [top](#active8)
+
+## Technologies Used
+
+### Languages
+
+* HTML5
+	* This project uses HTML5 as the main language for content and structure of the Website.
+* CSS3
+	* This project uses CSS3 for Website styling
+* Javascript
+	*  This project uses Javascript for the required logic to allow for interactivity
+* Python
+	* Back-end language that the Django framework is based on
+
+### Frameworks, Libraries and Programs used
+
+* [Django](https://www.djangoproject.com/)
+	* High-level Python web framework used to build this application
+* [Bootstrap](https://getbootstrap.com/)
+	* For components and styling
+* [Font Awesome](https://fontawesome.com/)
+	* Font awesome Icons are used
+* [Google Fonts](https://fonts.google.com/)
+	* Google fonts are used throughout the project to import the relevant fonts
+* [GitHub](https://github.com/)
+	* GithHub is the hosting site used to store the source code for the Website and [Git Pages](https://pages.github.com/) is used for the deployment of the live site.
+* [GitPod](https://gitpod.io/)
+	* GitPod is used as version control software to commit and push code to the GitHub repository where the source code is stored.
+* [Google Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools)
+	* Google chromes built in developer tools are used to inspect page elements and help debug issues with the site layout and test different CSS styles.
+* [Balsamiq Wireframes](https://balsamiq.com/wireframes/)
+	* Balsamiq was used to create wireframes and UX design during the planning and design process.
+* [Am I Responsive?](http://ami.responsivedesign.is/)
+	* Used to generate the screenshots for responsive design.
+* [Heroku](https://dashboard.heroku.com/)
+	* Could application platform where the deployed application is served from
+* [AWS S3]()
+	* Could application platform where the deployed application is served from
+* Heroku Postgres
+    * PostgreSQL is one of the world's most popular relational database management systems.
+* Tiny JPG
+    *
+
+
+
+##### Return to [top](#active8)
+
+## Testing
+
+Owing to time constraints, it was not possible to design and implement automatic Unit-testing for this project, and so extensive manual testing was completed instead.
+An MS Excel workbook detailing these tests and outcomes can be found [here]()
+
+### Bugs
+
+#### Resolved Bugs
+
+
+
+#### Unresolved bugs
+
+
+
+
+### Validation
+
+#### HTML valiation
+
+HTML pages have been validated through the [HTML validator](https://validator.w3.org/nu/#textarea) without errors.
+
+
+
+#### CSS validation
+
+No errors were found when passing through the official [W3C validator](https://jigsaw.w3.org/css-validator/). A copy of the report can be found [here]()
+
+#### JavaScript validation
+Javascript code validation was complited on [jshint](https://jshint.com/) without errors.
+
+A copy of the report can be found [here]()
+
+
+#### Python validaton
+
+The Python pages have been validated though the PEP8 validator. Copies of the reports can be found [here]()
+
+
+##### Return to [top](#active8)
+
+## Deployment
+
+### Initial Deployment to Heroku
+
+**In your app / GitPod**
+
+1. Create new repository from CI template
+2. Install Django and required dependencies into Gitpod workspace
+3. Create new Django project and app
+4. Create Procfile as required
+5. Run "pip3 freeze --local > requirements.txt" to update requirements file
+6. Git add and git commit the changes made
+
+
+**Log into heroku**
+
+3. Log into [Heroku](https://dashboard.heroku.com/apps) or create a new account and log in
+4. top right-hand corner click "New" and choose the option Create new app, if you are a new user, the "Create new app" button will appear in the middle of the screen
+5. Write app name - it has to be unique, it cannot be the same as this app
+6. Choose Region - I am in Europe
+7. Click "Create App"
+
+
+**Add Postgres and set Config Vars**
+
+8. Go to Resources Tab, Add-ons, search and add Heroku Postgres
+9. Choose "settings" from the menu on the top of the page
+10. Go to section "Config Vars" and click button "Reveal Config Vars".
+11. Add the below variables to the list
+    * Database URL will be added automaticaly
+    * Secret_key - is the Django key
+    * AWS S3 - ADD
+    * Configure "DISABLE_COLLECTSTATIC = 1" in Config Vars
+
+
+**GitPod/GitHub**
+
+12. Procfile needs to be created in your app
+```
+web: gunicorn PROJ_NAME.wsgi
+```
+
+13. In settings in your app add Heroku to ALLOWED_HOSTS
+14. Add and commit the changes in your code and push to github
+
+
+**Final step - deployment**
+
+15. Next go to "Deploy" in the menu bar on the top
+16. Go to section "deployment method", choose "GitHub"
+17. New section will appear "Connect to GitHub" - Search for the repository to connect to
+18. Type the name of your repository and click "search"
+19. Once Heroku finds your repository - click "connect"
+20. Scroll down to the section "Automatic Deploys"
+21. Click "Enable automatic deploys" or choose "Deploy branch" and manually deploy
+22. Click "Deploy branch"
+
+Once the program runs:
+you should see the message "the app was sussesfully deployed"
+
+23. Click the button "View"
+
+
+### Final Deployment
+
+Gitpod
+    1. Ensure all required files up-to-date and that application is working
+    2. Run "pip3 freeze --local > requirements.txt" to update requirements file
+    3. Ensure "DEBUG = False" set in settings.py
+    4. Perform commit and push to GitHub
+
+Heroku
+    1. Under the app, browse to Config Vars
+    2. Remove the value "DISABLE_COLLECTSTATIC = 1" from Config Vars
+    3. Browse to Deploy and run deployment
+    4. Wait for confirmation that app has deployed
+
+
+### Forking the GitHub Repository
+
+By forking the GitHub Repository you will be able to make a copy of the original repository on your own GitHub account allowing you to view and/or make changes without affecting the original repository by using the following steps:
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/CeciliaSwe/portfolio-5th)
+2. At the top of the Repository, click the "Fork" button.
+3. You should now have a copy of the original repository in your GitHub account.
+
+### Making a Local Clone
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/CeciliaSwe/portfolio-5th)
+2. Under the repository name, click "Clone or download".
+3. To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
+4. Open commandline interface on your computer
+5. Change the current working directory to the location where you want the cloned directory to be made.
+6. Type `git clone`, and then paste the URL you copied in Step 3.
 
 ```
-pkill uptime.sh
-rm .vscode/uptime.sh
+$ git clone https://github.com/CeciliaSwe/portfolio-5th
 ```
 
-**Anything more?**
+7. Press Enter. Your local clone will be created.
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+### Setting up your local enviroment
 
----
+1. Create Virtual enviroment on your computer or use gitpod built in virtual enviroment feature.
+2. Create env.py file. It needs to contain those 5 variables.
 
-Happy coding!
+* Database URL can be obtained from [heroku](https://dashboard.heroku.com/), add PostgreSQL as an add on when creating an app.
+* Secret_key - is the Django secret key
+* AWS S3
+
+
+```
+os.environ["DATABASE_URL"] = "..."
+os.environ["SECRET_KEY"] = "..."
+os.environ["CLOUDINARY_URL"] = "..."
+os.environ["DEVELOPMENT"] = "True"
+```
+
+3. Run command
+```
+pip3 install -r requirements.txt
+```
+
+
+##### Return to [top](#active8)
+
+## Credits
+
+This project is based on the "Boutique Ado" walkthrough from Code Institute, however all code has been customized and adapted for this project, both backend and frontend. Other inspiration and tutoritals are credited as per below:
+
+- Newsletter app
+-
+
+
+### Acknowledgements
+-   To my Mentor [Chris Quinn](https://github.com/10xOXR) for guidance and pushing me to make smart choices.
+-   To CI Tutors for debugging and pointing in the right direction.
+
+##### Return to [top](#active8)
