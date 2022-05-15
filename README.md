@@ -105,8 +105,6 @@ Github Issues were used to create User Stories and group them according to MoSCo
 #### Toasts
 
 
-
-
 ### Features Left to Implement
 
 - Allow users to search for products
