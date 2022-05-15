@@ -112,7 +112,7 @@
               {% if request.user.is_authenticated %}
               {% if request.user.is_superuser %}
               <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
-              <a href="" class="dropdown-item">FAQ Management</a>
+              <a href="{% url 'manage_questions' %}" class="dropdown-item">FAQ Management</a>
               {% endif %}
               <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
               <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
@@ -168,7 +168,7 @@
   {% block content %}
   {% endblock %}
 
-  <!-- Footer -->
+  <!-- Footer
   <footer class="footer mt-auto py-3 bg-dark text-white">
     <p class="m-0 text-center text-white">Active8</p>
     <p class="m-0 text-center text-white">Follow us:
@@ -185,7 +185,7 @@
         aria-label="Visit our Twitter Page! (opens in new tab)">
         <i class="fab fa-twitter-square ms-3"></i></a>
     </p>
-  </footer>
+  </footer>  -->
 
   {% block postloadjs %}
   <script type="text/javascript">
