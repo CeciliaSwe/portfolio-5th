@@ -1,0 +1,25 @@
+{% load static %}
+{% csrf_token %}
+<div class="row g-3">
+    <div class="col-12">
+        {{ form.header| as_crispy_field }}
+    </div>
+    <div class="col-12">
+        {{ form.detail | as_crispy_field }}
+    </div>
+
+    <!-- only superuser can see answer field and status field-->
+    {% if request.user.is_superuser %}
+    <div class="col-12">
+        {{ form.answer | as_crispy_field }}
+    </div>
+    <div class="col-12">
+        {{ form.status | as_crispy_field }}
+    </div>
+
+    {% endif %}
+    <div class="col-12">
+        <input type="hidden" value="{{request.user.id}}" name="author">
+      </div>
+
+</div>
