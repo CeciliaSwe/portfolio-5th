@@ -5,14 +5,17 @@
 
 {% block content %}
 
-<div class="hero-image">
-    <div class="">
-        <a href="{% url 'products' %}?category=kids,adolescents,Adults" class="btn btn-text-box"><h1 class="hero-text">Come join our adventures!
-        </h1><h2 class="hero-text"><i class="fas fa-arrow-right"></i></h2></a>
+<div class="hero-image container">
+    <div class="d-flex justify-content-center align-items-center">
+        <a href="{% url 'products' %}?category=kids,adolescents,Adults" class="btn btn-text-box">
+            <h1 class="hero-text">Come join our adventures!
+            </h1>
+            <h2 class="hero-text"><i class="fas fa-arrow-right"></i></h2>
+        </a>
     </div>
 
 </div>
- <!--
+<!--
 <div class="hero-image">
     <div class="hero-text-box">
         <h4>
@@ -24,39 +27,36 @@
 <div class="container mb-5">
     <!-- About us, more info and shop button -->
     <div class="row mt-5">
-        <div class="col-4 gx-5">
+        <div class="col-12 col-lg-4 gx-5">
             <div class="index-box">
-                <h4 class="pt-3">Why do we use it?
+                <h4 class="pt-3">About Active8
                 </h4>
                 <p class="p-3">
-                    It is a long established fact that a reader will be distracted by the readable content of a page
-                    when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
-                    distribution of letters, as opposed to using 'Content here, content here', making it look like
-                    readable English.
+                    Ever wondered what to do a rainy day? Or a sunny day for that matter? Our adventures span all
+                    weather and ages! We provide you with the concept, the idea, the complete walkthrough for an amazing
+                    adventure. All you need to do is set it up and enjoy. Questions? See next section!
                 </p>
             </div>
         </div>
-        <div class="col-4 gx-5">
+        <div class="col-12 col-lg-4 gx-5">
             <div class="index-box">
-                <h4 class="pt-3">Why do we use it?
+                <h4 class="pt-3">FAQ
                 </h4>
                 <p class="p-3">
-                    It is a long established fact that a reader will be distracted by the readable content of a page
-                    when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
-                    distribution of letters, as opposed to using 'Content here, content here', making it look like
-                    readable English.
+                    Anything you have ever wondered has been answered here (or will be - if you ask the question!). Pop
+                    in <a href="{% url 'questions' %}">here</a> to see if anyone else wondered the same or submit a new
+                    question. Promise we'll be quick to
+                    answer.
                 </p>
             </div>
         </div>
-        <div class="col-4 gx-5">
+        <div class="col-12 col-lg-4 gx-5">
             <div class="index-box">
-                <h4 class="pt-3">Why do we use it?
+                <h4 class="pt-3">Newsletter
                 </h4>
                 <p class="p-3">
-                    It is a long established fact that a reader will be distracted by the readable content of a page
-                    when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
-                    distribution of letters, as opposed to using 'Content here, content here', making it look like
-                    readable English.
+                    Everyone knows newsletters are fun and yours is no different. <a href="{% url 'newsletter_signup' %}">Sign
+                        up </a>for one to stay in the loop and not miss out on any news, campaigns, new adventures and other fun stuff. FOMO!
                 </p>
             </div>
         </div>

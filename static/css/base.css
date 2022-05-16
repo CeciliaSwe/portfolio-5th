@@ -3,6 +3,11 @@ html {
     height: 100%;
 }
 
+.container {
+
+    max-width: 90%;
+}
+
 body {
     font-family: 'Raleway', sans-serif !important;
     height: calc(100vh - 164px);
@@ -173,10 +178,9 @@ footer {
     border-radius: 15px;
     box-shadow: 5px 10px 18px #888888;
     text-align: center;
+    margin: auto;
 
 }
-
-
 
 
 /* navbar */
@@ -198,7 +202,24 @@ li>a.dropdown-item:hover {
 
 
 @media (min-width: 992px) {
-    .header-container {
-        padding-top: 0px;
+    .container {
+        max-width: 90%;
     }
 }
+
+@media (max-width: 767px) {
+    .btn-text-box {
+
+        width: 200px;
+        height: 100px;
+        padding-top: 20px;
+        padding-left: 10px;
+
+    }
+
+    .hero-text {
+        letter-spacing: 2px;
+        font-size: large;
+    }
+}
+
