@@ -110,16 +110,51 @@
                             <td class="py-3">
                                 <p class="my-0">
                                     <span>
-                                        <a class="update-link text-info"><small>Update</small></a>
-                                    </span>
-                                    <span>
-                                        <a href="{% url 'remove_from_cart' item.item_id %}" class="text-danger float-right">
-                                            <small>Remove <i class="far fa-trash-alt"></i></small>
+                                        <a class="update-link text-info btn btn-delete-update mx-1">
+                                            <small>Update</small>
+                                            <i class="fas fa-redo"></i>
                                         </a>
                                     </span>
+                                    <!-- Remove direct link
+                                    <span>
+                                        <a href="{% url 'remove_from_cart' item.item_id %}"
+                                            class="text-danger float-right">
+                                            <small>Remove <i class="far fa-trash-alt"></i></small>
+                                        </a>
+                                    </span> -->
+
+                                    <!-- Modal Trigger -->
+                                    <button type="button" class="btn btn-delete-update mx-1" data-toggle="modal"
+                                        data-target="#deleteModalCart">
+                                        <small>Delete</small>
+                                        <i class="far fa-trash-alt"></i>
+                                    </button>
                                 </p>
                             </td>
                         </tr>
+                        <!-- Deletion Modal -->
+                        <div class="modal fade" id="deleteModalCart" tabindex="-1" aria-labelledby="modalHeading"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title " id="modalHeading">Delete from cart</h5>
+                                        <button type="button" class="btn-close" data-dismiss="modal"
+                                            aria-label="Close">x</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Are you sure you want to delete {{ item.product.name }} from cart?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <div class="btn d-inline-block btn-danger rounded-2">
+                                            <a href="{% url 'remove_from_cart' item.item_id %}">Delete</a>
+                                        </div>
+                                        <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         {% endfor %}
                         {% else %}
                         <p class="lead mb-5">
