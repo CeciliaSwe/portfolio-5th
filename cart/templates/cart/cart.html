@@ -144,13 +144,13 @@
 {% include 'products/includes/quantity_input_script.html' %}
 
 <script type="text/javascript">
-    // Update quantity on click
+    // Update quantity on click - from walkthrough
     $('.update-link').click(function (e) {
         var form = $(this).prev('.update-form');
         form.submit();
     })
 
-    // Remove item and reload on click
+    // Remove item and reload on click - from walkthrough
     $('.remove-item').click(function (e) {
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];

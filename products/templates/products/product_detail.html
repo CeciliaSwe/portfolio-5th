@@ -66,6 +66,39 @@
                 <a href="">
                     <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                 </a>
+                {% if request.user.is_superuser %}
+                <small class="ml-3">
+                    <a href="{% url 'edit_product' product.id %}"><i class="fas fa-pen"></i> Edit</a> |
+                    <!-- Modal Trigger -->
+                    <button type="button" class="btn btn-delete btn-sm" data-toggle="modal"
+                        data-target="#deleteModalProduct">
+                        Delete
+                        <i class="far fa-trash-alt"></i>
+                    </button>
+                </small>
+                <!-- Deletion Modal -->
+                <div class="modal fade" id="deleteModalProduct" tabindex="-1" aria-labelledby="modalHeading"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title " id="modalHeading">Delete Product</h5>
+                                <button type="button" class="btn-close" data-dismiss="modal"
+                                    aria-label="Close">x</button>
+                            </div>
+                            <div class="modal-body">
+                                Are you sure you want to delete this product?
+                            </div>
+                            <div class="modal-footer">
+                                <div class="btn d-inline-block btn-danger rounded-2">
+                                    <a href="{% url 'delete_product' product.id %}">Delete</a>
+                                </div>
+                                <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
 
 
 
