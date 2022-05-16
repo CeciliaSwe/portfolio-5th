@@ -33,13 +33,13 @@ def add_to_cart(request, item_id):
 
 def update_cart(request, item_id):
     """Adjust the quantity of the specified product to the specified amount"""
-
+    product = Product.objects.get(pk=item_id)
     quantity = int(request.POST.get('quantity'))
 
     cart = request.session.get('cart', {})
     if quantity > 0:
         cart[item_id] = quantity
-        messages.success(request, f'Updated {product.name} to your bag')
+        messages.success(request, f'Updated quantity of {product.name} in your cart')
 
     else:
         cart.pop(item_id)
