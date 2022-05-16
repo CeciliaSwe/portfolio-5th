@@ -1,5 +1,13 @@
 from django.db import models
 
+DIFFICULTY_CHOICES= [
+    ('1', '1'),
+    ('2', '2'),
+    ('3', '3'),
+    ('4', '4'),
+    ('5', '5'),
+    ]
+
 
 class Category(models.Model):
     name = models.CharField(max_length=254)
@@ -17,7 +25,9 @@ class Product(models.Model):
     name = models.CharField(max_length=254)
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    difficulty = models.IntegerField(null=True, blank=True)
+    difficulty = models.CharField(
+        max_length=30, choices=DIFFICULTY_CHOICES, default="3"
+    )
     image = models.ImageField(null=True, blank=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)

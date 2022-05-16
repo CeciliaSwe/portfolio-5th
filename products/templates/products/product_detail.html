@@ -111,17 +111,17 @@
                 <div>
                     <small class="text-muted product-difficulty mt-3">
                         Difficulty
-                        {% if product.difficulty is 5 %}
+                        {% if product.difficulty == "5" %}
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
                             class="fas fa-star"></i><i class="fas fa-star"></i>
-                        {% elif product.difficulty is 4  %}
+                        {% elif product.difficulty == "4" %}
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
                             class="fas fa-star"></i>
-                        {% elif product.difficulty is 3  %}
+                        {% elif product.difficulty == "3" %}
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                        {% elif product.difficulty is 2  %}
+                        {% elif product.difficulty == "2" %}
                         <i class="fas fa-star"></i><i class="fas fa-star"></i>
-                        {% elif product.difficulty is 1  %}
+                        {% elif product.difficulty == "1" %}
                         <i class="fas fa-star"></i>
                         {% endif %}
                     </small>
