@@ -9,22 +9,26 @@
     <!-- header of the newsletter subscribe form page -->
     <div class="py-5 text-center">
 
-        <h2 class="my-heading-font">Newsletter
+        <h2 class>Newsletter
         </h2>
         <p class="lead">Unsubscribe here!
         </p>
     </div>
-    <!--   -->
-    <div class="row ">
+    <!-- unsubscribe form  -->
 
-        <!-- forms starts here -->
-        <div class="col-md-8 col-lg-8">
+    <div class="container h-100">
+        <div class="row">
+          <div class="col-md-6 offset-md-3 mt-5 ">
+            <div class="card mb-4 mt-5">
+              <div class="card-body">
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    {{ form | crispy }}
+                    <button type="submit" class="btn btn-custom rounded-2">Unsubscribe</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
 
-            <form action="" method="POST">
-                {% csrf_token %}
-                {{ form | crispy }}
-                <button type="submit" class="btn btn-light">Unsubscribe</button>
-
-            </form>
-
-            {% endblock %}
+{% endblock %}

@@ -9,26 +9,29 @@
     <!-- header of the newsletter subscribe form page -->
     <div class="py-5 text-center">
 
-        <h2 class="my-heading-font">Newsletter
+        <h2 class>Newsletter
         </h2>
         <p class="lead">Subscribe here!
         </p>
     </div>
-    <!--   -->
-    <div class="row ">
+    <!--sign up form-->
+    <div class="container h-100">
+        <div class="row">
+          <div class="col-md-6 offset-md-3 mt-5 ">
+            <div class="card mb-4 mt-5">
+              <div class="card-body">
 
-        <!-- forms starts here -->
-        <div class="col-md-8 col-lg-8">
+                  <form action="" method="POST">
+                    {% csrf_token %}
+                    {{ form | crispy }}
+                    <button type="submit" class="btn btn-custom rounded-2">Subscribe</button>
 
-            <form action="" method="POST">
-                {% csrf_token %}
-                {{ form | crispy }}
-                <button type="submit" class="btn btn-light">Subscribe</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
 
-            </form>
+    </div>
 
-
-
-
-
-            {% endblock %}
+    {% endblock %}
