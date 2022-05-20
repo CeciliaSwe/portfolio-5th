@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+
+    <!-- header of the newsletter subscribe form page -->
+    <div class="py-5 text-center">
+
+        <h2 class>Contact us directly here!
+        </h2>
+        <p class="lead">Please write your name, email address and a message below if you have any questions.
+			One of our staff members will be happy to contact you directly and answer your questions as soon as possible.
+        </p>
+    </div>
+    <!--sign up form-->
+    <div class="container h-100">
+        <div class="row">
+          <div class="col-md-6 offset-md-3 mt-5 ">
+            <div class="card mb-4 mt-5">
+              <div class="card-body">
+
+                  <form action="" method="POST">
+                    {% csrf_token %}
+                    {{ form | crispy }}
+                    <button type="submit" class="btn btn-custom rounded-2">Submit</button>
+
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    </div>
+
+{% endblock %}
+
