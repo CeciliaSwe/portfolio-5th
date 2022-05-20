@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col12 align-items-center mt-5">
+            <h1 class="my-heading-font">Error: Page 404
+            </h1>
+            <p>We are sorry you are lost, come back to safety
+            </p>
+            <p>
+                <a class="btn btn-lg btn-custom rounded-2" href="{% url 'home' %}">Take me home
+                </a>
+            </p>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

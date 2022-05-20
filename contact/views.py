@@ -18,7 +18,7 @@ def contact(request):
             messages.success(request, 'Your message has been sent!')
             return redirect(reverse('contact'))
             subject = "Thank you for contacting us"
-            to_email = [form.email]
+            to_email = [contact.email]
             auto_message = """Thank you for contacting us! We will get back to as soon as possible!"""
             send_mail(subject=subject, from_email=settings.DEFAULT_FROM_EMAIL, recipient_list=to_email, message=auto_message, fail_silently=False)
 
