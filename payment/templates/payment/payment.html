@@ -120,7 +120,7 @@
                             <span class="icon">
                                 <i class="fas fa-exclamation-circle"></i>
                             </span>
-                            <span>Your card will be charged <strong>${{ total|floatformat:2 }}</strong></span>
+                            <span>Your card will be charged <strong>SEK {{ total|floatformat:2 }}</strong></span>
                         </p>
                     </div>
 
@@ -164,7 +164,7 @@
                             </h6>
 
                         </div>
-                        <span class="text-muted"> €{{ item.product.price | calc_subtotal:item.quantity }}
+                        <span class="text-muted"> SEK {{ item.product.price | calc_subtotal:item.quantity }}
                         </span>
                     </li>
                     {% endfor %}
@@ -172,7 +172,7 @@
                     <li class="list-group-item d-flex justify-content-between">
                         <span>Total (euro)
                         </span>
-                        <strong> €{{ total }}
+                        <strong> SEK {{ total }}
                         </strong>
                     </li>
                 </ul>
