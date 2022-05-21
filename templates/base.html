@@ -106,7 +106,7 @@
                   <div><i class="fas fa-user fa-lg"></i></div>
                   {% if request.user.is_authenticated %}
                   <p class="my-0 text-uppercase">
-                    {{ request.user.username }} <i class="fas fa-caret-down"></i></p>
+                    {{ request.user.username }}</p>
                   {% else %}
                   <p class="my-0">Login</p>
                   {% endif %}
@@ -134,7 +134,7 @@
                   <div><i class="fas fa-shopping-cart"></i></div>
                   <p class="my-0">
                     {% if grand_total %}
-                    €{{ grand_total }}
+                    SEK {{ grand_total }}
                     {% else %}
                     Empty
                     {% endif %}
