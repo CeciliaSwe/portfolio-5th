@@ -3,20 +3,28 @@
 
 {% block content %}
 
-<div class="container">
+
+<div class="container h-100">
     <div class="row">
-        <div class="col12 align-items-center mt-5">
-            <h1 class="my-heading-font">Error: Page 404
+      <div class="col-md-8 offset-md-2 mt-5 card-outer">
+        <div class="card mb-4 mt-5">
+          <div class="card-body workout-card">
+
+            <h1 class="my-heading-font justify-content-center">Error: Page 404
             </h1>
             <p>We are sorry you are lost, come back to safety
             </p>
             <p>
                 <a class="btn btn-lg btn-custom rounded-2" href="{% url 'home' %}">Take me home
                 </a>
+                <a class="btn btn-lg btn-custom-secondary rounded-2" href="{% url 'contact' %}">Contact Us
+                </a>
             </p>
-        </div>
 
+          </div>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
 
 {% endblock %}
