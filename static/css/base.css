@@ -75,13 +75,21 @@ footer {
 
 }
 
+.delete-link {
+    color: black;
+    text-decoration: none;
+
+}
+
+.delete-link:hover {
+    color: black;
+    text-decoration: none;
+
+}
+
 /* bootstrap toasts */
 
-.message-container {
-    position: fixed;
-    bottom: 0;
-    z-index: 99999999999;
-}
+
 
 
 /* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */

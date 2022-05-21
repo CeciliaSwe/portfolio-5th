@@ -32,7 +32,7 @@
         <!-- Start of card-->
         {% for question in question_list %}
         <div class="col-8 offset-2 mt-2">
-            <div class="card">
+            <div class="card mb-2">
                 <div class="card-header">
                     <h2>{{ question.header }} </h2>
                 </div>
@@ -80,7 +80,7 @@
                             </div>
                             <div class="modal-footer">
                                 <div class="btn d-inline-block btn-outline-danger text-white">
-                                    <a href="{% url 'delete_question' question.id %}">Delete</a>
+                                    <a href="{% url 'delete_question' question.id %}" class="delete-link">Delete</a>
                                 </div>
                                 <button type="button" class="btn btn-custom-secondary"
                                     data-dismiss="modal">Close</button>

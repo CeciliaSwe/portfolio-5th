@@ -15,18 +15,16 @@
         <div class="col-md-6 offset-md-3 mt-2 ">
             <div class="card mb-4 mt-5">
                 <div class="card-body">
-                    <form action="{% url 'edit_question' question.id %}" enctype="multipart/form-data" method="POST" id="question-form">
+                    <form action="{% url 'edit_question' question.id %}" enctype="multipart/form-data" method="POST"
+                        id="question-form">
                         {% include 'questions/includes/question_form.html' %}
-                        <hr class="my-4">
                         <div class="row gy-3">
                             <!-- buttons at the end of the form -->
-                            <div class="col-md-6 text-center ">
+                            <div class="col-12 my-4 text-center">
                                 <button type="reset" class="btn btn-custom-secondary me-2 rounded-2">
                                     <span class="font-weight-bold">Clear
                                     </span>
                                 </button>
-                            </div>
-                            <div class="col-md-6 text-center ">
                                 <button id="submit-button" class="btn btn-custom rounded-2">
                                     <span class="font-weight-bold">Save
                                     </span>
