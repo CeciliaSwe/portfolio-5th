@@ -51,10 +51,10 @@
                                 Are you sure you want to delete this product?
                             </div>
                             <div class="modal-footer">
-                                <div class="btn d-inline-block btn-danger rounded-2">
-                                    <a href="{% url 'delete_product' product.id %}">Delete</a>
+                                <div class="btn d-inline-block btn-outline-danger text-white">
+                                    <a href="{% url 'delete_product' product.id %}" class="link">Delete</a>
                                 </div>
-                                <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-custom-secondary" data-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>
