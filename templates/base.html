@@ -47,7 +47,7 @@
   <title>Active8 {% block extra_title %}{% endblock %}</title>
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
   <div class="px-3 py-2 bg-dark text-white">
     <div class="container">
       <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
@@ -172,24 +172,22 @@
   {% block content %}
   {% endblock %}
 
-  <!-- Footer
-  <footer class="footer mt-auto py-3 bg-dark text-white">
-    <p class="m-0 text-center text-white">Active8</p>
-    <p class="m-0 text-center text-white">Follow us:
-      <a class="text-white" target="_blank" href="https://youtube.com" rel="noopener"
-        aria-label="Visit our YouTube Channel! (opens in new tab)">
-        <i class="fab fa-youtube-square ms-3"></i></a>
-      <a class="text-white" target="_blank" href="https://instagram.com" rel="noopener"
-        aria-label="Visit our >Instagram Page! (opens in new tab)">
-        <i class="fab fa-instagram-square ms-3"></i></a>
-      <a class="text-white" target="_blank" href="https://facebook.com" rel="noopener"
-        aria-label="Visit our Facebook page! (opens in new tab)">
-        <i class="fab fa-facebook-square ms-3"></i></a>
-      <a class="text-white" target="_blank" href="https://twitter.com" rel="noopener"
-        aria-label="Visit our Twitter Page! (opens in new tab)">
-        <i class="fab fa-twitter-square ms-3"></i></a>
-    </p>
-  </footer>  -->
+
+  <!-- FOOTER
+  <footer class="footer mt-auto">
+    <hr>
+    <div class="container">
+      <p> Active8 &middot;
+        <a class="link" href="">Contact
+        </a> &middot;
+        <a class="link" href="">Newsletter
+        </a> &middot; Follow us on
+        <a class="link" href="#" rel="nofollow"
+          target="_blank" aria-label="go to our facebook page (opens in new window)">Facebook</a>
+      </p>
+    </div>
+  </footer>
+  -->
 
   {% block postloadjs %}
   <script type="text/javascript">
