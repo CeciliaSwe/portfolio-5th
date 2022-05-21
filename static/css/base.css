@@ -19,10 +19,6 @@ body {
 
 }
 
-footer {
-    height: 100px;
-
-}
 
 
 /* from Bulma */
@@ -84,10 +80,6 @@ footer {
     color: black;
     text-decoration: none;
 
-}
-
-.message-container {
-    z-index: 9999;
 }
 
 
