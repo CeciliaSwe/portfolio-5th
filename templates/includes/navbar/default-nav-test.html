@@ -141,9 +141,9 @@
             {% else %} text-white {% endif %}">
               <svg class="bi d-block mx-auto mb-1" width="24" height="24" fill="currentColor"><use xlink:href="#trolley"/></svg>
               {% if grand_total %}
-              £ {{ grand_total|floatformat:2 }}
+              SEK {{ grand_total|floatformat:2 }}
               {% else %}
-              £ 0.00
+              SEK 0.00
               {% endif %}
             </a>
           </li>
