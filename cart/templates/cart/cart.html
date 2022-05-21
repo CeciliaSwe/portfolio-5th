@@ -91,14 +91,6 @@
                             <td class="py-3">
                                 <p class="my-0">
 
-                                    <!-- Remove direct link
-                                    <span>
-                                        <a href="{% url 'remove_from_cart' item.item_id %}"
-                                            class="text-danger float-right">
-                                            <small>Remove <i class="far fa-trash-alt"></i></small>
-                                        </a>
-                                    </span> -->
-
                                     <!-- Modal Trigger -->
                                     <button type="button" class="btn btn-delete-update mx-1" data-toggle="modal"
                                         data-target="#deleteModalCart">
@@ -119,11 +111,11 @@
                                             aria-label="Close">x</button>
                                     </div>
                                     <div class="modal-body">
-                                        Are you sure you want to delete {{ item.product.name }} from cart?
+                                        Are you sure you want to remove {{ item.product.name }} from your cart?
                                     </div>
                                     <div class="modal-footer">
-                                        <div class="btn d-inline-block btn-danger rounded-2">
-                                            <a href="{% url 'remove_from_cart' item.item_id %}">Delete</a>
+                                        <div class="btn d-inline-block btn-outline-danger text-white">
+                                            <a href="{% url 'remove_from_cart' item.item_id %}" class="delete-link">Remove</a>
                                         </div>
                                         <button type="button" class="btn btn-custom-secondary"
                                             data-dismiss="modal">Close</button>
