@@ -75,17 +75,18 @@ footer {
 
 }
 
-.delete-link {
+.link {
     color: black;
     text-decoration: none;
 
 }
 
-.delete-link:hover {
+.link:hover {
     color: black;
     text-decoration: none;
 
 }
+
 
 
 

@@ -30,15 +30,13 @@
                     <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
                 </a>
                 {% if request.user.is_superuser %}
-                <small class="ml-3">
-                    <a href="{% url 'edit_product' product.id %}"><i class="fas fa-pen"></i> Edit</a> |
+                    <a class="link" href="{% url 'edit_product' product.id %}"><i class="fas fa-pen"></i> Edit</a>
                     <!-- Modal Trigger -->
-                    <button type="button" class="btn btn-delete btn-sm" data-toggle="modal"
+                    <button type="button" class="btn btn-delete" data-toggle="modal"
                         data-target="#deleteModalProduct">
-                        Delete
                         <i class="far fa-trash-alt"></i>
+                        Delete
                     </button>
-                </small>
                 <!-- Deletion Modal -->
                 <div class="modal fade" id="deleteModalProduct" tabindex="-1" aria-labelledby="modalHeading"
                     aria-hidden="true">
