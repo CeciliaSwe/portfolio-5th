@@ -4,15 +4,16 @@
 {% endblock %}
 {% block content %}
 <div class="container h-100">
+    <div class="py-3 text-center">
+        <h2 class="mb-3">Question Management
+        </h2>
+        <p class="lead">Edit and respond to a question:
+        </p>
+    </div>
     {% if user.is_authenticated %}
     {% if request.user.is_superuser %}
     <div class="row">
-        <div class="col-12 col-md-6 offset-md-3 text-center mt-3">
-            <h2 class="logo-font my-4">Question Management</h2>
-            <h5 class="text-muted">Edit and respond to question</h5>
-            <hr>
-        </div>
-        <div class="col-md-6 offset-md-3 mt-2 ">
+        <div class="col-sm-12 col-md-8 offset-md-2 mt-1 px-0">
             <div class="card mb-4 mt-5">
                 <div class="card-body">
                     <form action="{% url 'edit_question' question.id %}" enctype="multipart/form-data" method="POST"
@@ -37,6 +38,7 @@
             </div>
         </div>
     </div>
+
     {% endif %}
     {% endif %}
 </div>
