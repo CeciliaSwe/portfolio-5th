@@ -34,7 +34,7 @@
     <div class="row">
 
         <!-- Order form   -->
-        <div class="col-md-6 col-lg-8">
+        <div class="col-md-12 col-lg-7">
             <h4 class="mb-3"> Your Details
             </h4>
             <form action="{% url 'payment' %}" method="POST" id="payment-form">
@@ -89,7 +89,7 @@
 
                         <input type="hidden" value="{{ client_secret }}" name="client_secret">
                     </div>
-                    <div class="submit-button text-right mt-5 mb-2">
+                    <div class="submit-button text-right mt-5 mb-3 ml-3">
                         <a href="{% url 'view_cart' %}" class="btn btn-custom-secondary rounded-2">
                             <span class="icon">
                                 <i class="fas fa-chevron-left"></i>
@@ -126,7 +126,7 @@
 
         <!-- order summary   -->
 
-            <div class="col-md-4 col-lg-4 order-md-last">
+            <div class="col-md-8 offset-md-2 col-lg-4 offset-lg-1 order-md-last">
                 <h4 class="d-flex justify-content-between align-items-center mb-3">
                     <span>Order Summary
                     </span>
