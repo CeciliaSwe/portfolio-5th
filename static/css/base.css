@@ -10,7 +10,7 @@ html {
 
 body {
     font-family: 'Raleway', sans-serif !important;
-    height: calc(100vh - 164px);
+    height: 100vh;
 
 }
 
