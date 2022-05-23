@@ -54,7 +54,7 @@
         <div class="d-flex flex-wrap align-items-center justify-content-between">
           <a class="navbar-brand d-flex my-2 mx-0 my-lg-0 me-lg-auto text-white text-decoration-none"
             href="{% url 'home' %}">
-            <h1 class="my-heading-font ps-2 mr-5 left">Active8</h1>
+            <h2 class="my-heading-font ps-2 mr-5 left">Active8</h2>
           </a>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
@@ -78,9 +78,8 @@
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="text-center">
                   <div><i class="fas fa-store-alt"></i></div>
-                  <p class="my-0">Shop</i></p>
+                  <p class="my-0">Shop</p>
                 </div>
-              </a>
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkShop">
                 <a class="dropdown-item" href="{% url 'products' %}?category=kids,adolescents,Adults">All Adventures</a>
@@ -112,8 +111,7 @@
                   {% endif %}
                 </div>
               </a>
-              </a>
-              <div class="dropdown-menu border-0" aria-labelledby="user-options">
+              <div class="dropdown-menu border-0" aria-labelledby="navbarDropdownMenuLinkProfile">
                 {% if request.user.is_authenticated %}
                 {% if request.user.is_superuser %}
                 <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
