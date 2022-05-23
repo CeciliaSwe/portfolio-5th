@@ -199,5 +199,11 @@ li>a.dropdown-item:hover {
         letter-spacing: 2px;
         font-size: large;
     }
+
+    .hero-image {
+        height: 25vh;
+        margin-bottom: 1vh;
+
+    }
 }
 
