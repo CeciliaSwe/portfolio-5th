@@ -1,32 +1,41 @@
 {% extends "base.html" %}
 {% load static %}
-{% block content %}
 
-<div class="container h-100">
-    <div class="py-5 text-center">
-        <h2 class="mb-3">Questions & Answers
-        </h2>
+{% block page_header %}
+<div class="container">
+  <!-- header of the newsletter subscribe form page -->
+
+    <div class="col-12 col-md-6 offset-md-3 text-center mt-3">
+      <h2 class=" my-4">Questions & Answers</h2>
+
         {% if user.is_authenticated %}
-        <p class="lead">Have a question of your own? Add it here!
-        </p>
-        <div class="">
-            <a href="{% url 'add_question' %}" class="btn btn-custom rpunded-2 px-4 ">
+        <h5>Have a question of your own? Add it here!</h5>
+        <div>
+            <a href="{% url 'add_question' %}" class="btn btn-custom rounded-2 px-4 ">
                 Add Question <i class="fas fa-plus"></i>
             </a>
         </div>
+        <hr>
         {% else %}
-        <p class="lead">Have a question of your own? Sign up or login to add it!
-        </p>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-            <a href="{% url 'account_signup' %}" class="btn btn-light px-4 ">
+        <h5>Have a question of your own? Sign up or login to add it!
+        </h5>
+        <div class="d-grid gap-2 d-md-flex justify-content-center">
+            <a href="{% url 'account_signup' %}" class="btn btn-custom-secondary px-4 ">
                 Sign Up
             </a>
-            <a href="{% url 'account_login' %}" class="btn btn-secondary px-4">
+            <a href="{% url 'account_login' %}" class="btn btn-custom px-4">
                 Login
             </a>
         </div>
+        <hr>
         {% endif %}
     </div>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="container h-100">
 
     <div class="container">
         <div class="row mt-3">
