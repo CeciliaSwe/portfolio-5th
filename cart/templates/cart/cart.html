@@ -5,13 +5,18 @@
 {% block page_header %}
 <div class="container header-container">
     <div class="row">
-        <div class="col"></div>
+        <div class="col-12 col-md-6 offset-md-3 text-center mb-0">
+            <h2 class="my-4">Shopping cart</h2>
+            <h5 class="text-muted">Cart summary below</h5>
+            <hr>
+        </div>
     </div>
 </div>
 {% endblock %}
 
 {% block content %}
-<div class="container mt-5 pt-5">
+
+<div class="container pt-5">
     {% if cart_items %}
     <div class="card p-4 shadow-lg">
         <h4 class="text-uppercase">
@@ -26,14 +31,11 @@
                 <span class="text-uppercase">Back</span>
             </a>
             <a href="{% url 'payment' %}" class="btn btn-custom rounded-2 btn-sm">
-                <span class="text-uppercase"> Secure Checkout</span>
+                <span class="text-uppercase"> Secure Payment</span>
                 <span class="icon">
                     <i class="fas fa-credit-card"></i>
                 </span>
             </a>
-        </div>
-        <div class="mt-3">
-            <p>Cart summary below</p>
         </div>
     </div>
     <div class="card p-4 shadow-lg">
@@ -88,7 +90,7 @@
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title " id="modalHeading">Delete from cart</h5>
+                                            <h5 class="modal-title " id="modalHeading">Remove from cart</h5>
                                             <button type="button" class="btn-close" data-dismiss="modal"
                                                 aria-label="Close">x</button>
                                         </div>
