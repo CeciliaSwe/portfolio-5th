@@ -97,26 +97,6 @@ body {
 }
 
 
-/* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
-.arrow-up {
-    width: 0;
-    height: 0;
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent;
-    border-bottom: 10px solid black;
-    position: absolute;
-    top: -10px;
-    right: 36px;
-}
-
-
-.bag-notification-wrapper {
-    height: 100px;
-    overflow-x: hidden;
-    overflow-y: auto;
-}
-
-
 /* Index */
 .hero-image {
     height: 50vh;
@@ -148,7 +128,6 @@ body {
     position: absolute;
 }
 
-
 .index-box {
 
     height: auto;
@@ -176,8 +155,6 @@ li>a.dropdown-item:hover {
 }
 
 /*  Media Queries */
-
-
 
 @media (min-width: 992px) {
     .container {
