@@ -23,7 +23,7 @@ def manage_questions(request):
     view to display all unpublished questions
     """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only the admins can do that.')
+        messages.error(request, 'Sorry, only the admins can manage questions.')
         return redirect(reverse('questions'))
 
     question_list = Question.objects.filter(status=0).order_by('-created_on')
@@ -69,7 +69,7 @@ def add_question(request):
 def edit_question(request, question_id):
     """ Edit a question posted in FAQ """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only the store owners can do that.')
+        messages.error(request, 'Sorry, only the store owners can edit questions.')
         return redirect(reverse('questions'))
     question = get_object_or_404(Question, pk=question_id)
 
@@ -98,7 +98,7 @@ def edit_question(request, question_id):
 def delete_question(request, question_id):
     """ Delete a question from the FAQ """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only the store owners can do that.')
+        messages.error(request, 'Sorry, only the store owners can delete questions.')
         return redirect(reverse('home'))
     question = get_object_or_404(Question, pk=question_id)
     question.delete()
