@@ -1,4 +1,3 @@
-from django.conf import settings
 from django.contrib import messages
 from django.shortcuts import render
 from django.core.mail import send_mail
@@ -47,8 +46,7 @@ def newsletter_unsubscribe(request):
             messages.success(request, "You have successfully unsubscribed!")
             subject = "Sorry you're leaving!"
             to_email = [instance.email]
-            unsubscribe_message = """Come back at any time
-            for more adventures"""
+            unsubscribe_message = """Come back for more adventures"""
             send_mail(
                 subject=subject,
                 from_email="from@active8.com",

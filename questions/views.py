@@ -46,7 +46,7 @@ def add_question(request):
         form = QuestionForm(request.POST, request.FILES)
 
         if form.is_valid():
-            question = form.save()
+            form.save()
             messages.success(request, "Successfully added your question!")
             return redirect(reverse("questions"))
 

@@ -1,9 +1,7 @@
 from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
-from django.shortcuts import render
 
 
-from .models import Contact
 from .forms import ContactForm
 
 
@@ -13,7 +11,7 @@ def contact(request):
         form = ContactForm(request.POST, request.FILES)
 
         if form.is_valid():
-            contact = form.save()
+            form.save()
             messages.success(request, "Thank you, message sent successfully!")
             return redirect(reverse("contact"))
 
