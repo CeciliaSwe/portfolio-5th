@@ -21,7 +21,7 @@ def add_to_cart(request, item_id):
     cart = request.session.get("cart", {})
 
     if item_id in list(cart.keys()):
-        cart[item_id] = quantity
+        cart[item_id] += quantity
         messages.success(request, f"Quantity of {product.name} updated")
 
     else:
