@@ -198,7 +198,15 @@ HTML pages have been validated through the [HTML validator](https://validator.w3
 No errors were found when passing through the official [W3C validator](https://jigsaw.w3.org/css-validator/). A copy of the report can be found [here]()
 
 #### JavaScript validation
-Javascript code validation was complited on [jshint](https://jshint.com/) without errors.
+
+Javascript code validation was complited on [jshint](https://jshint.com/)
+Errors relating to ES6 syntax was resolved by adding this line to the beginning of the file:
+```
+/*jshint esversion: 6*/
+```
+
+No errors were found with the exception of stripe_element.js which returns "undefined variables". This is due to core functionality referring to Stripe. Copy of the code was taken from older version Stripe pages that were referenced in Butique Ado.
+
 
 A copy of the report can be found [here]()
 

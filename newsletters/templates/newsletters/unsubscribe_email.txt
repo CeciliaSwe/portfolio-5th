@@ -1,8 +1,0 @@
-<html>
-<head>
-</head>
-<body>
-<h2>Sorry you're leaving!</h2>
-<p>Come back at any time for more adventures</p>
-</body>
-</html>
