@@ -16,20 +16,20 @@ def payment(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
-    if request.method == 'POST':
-        cart = request.session.get('cart', {})
+    if request.method == "POST":
+        cart = request.session.get("cart", {})
 
         form_data = {
-            'first_name': request.POST['first_name'],
-            'last_name': request.POST['last_name'],
-            'email': request.POST['email'],
-            'phone_number': request.POST['phone_number'],
-            'country': request.POST['country'],
-            'zipcode': request.POST['zipcode'],
-            'city': request.POST['city'],
-            'street_address1': request.POST['street_address1'],
-            'street_address2': request.POST['street_address2'],
-            'county': request.POST['county'],
+            "first_name": request.POST["first_name"],
+            "last_name": request.POST["last_name"],
+            "email": request.POST["email"],
+            "phone_number": request.POST["phone_number"],
+            "country": request.POST["country"],
+            "zipcode": request.POST["zipcode"],
+            "city": request.POST["city"],
+            "street_address1": request.POST["street_address1"],
+            "street_address2": request.POST["street_address2"],
+            "county": request.POST["county"],
         }
 
         order_form = OrderForm(form_data)
@@ -39,34 +39,41 @@ def payment(request):
                 try:
                     product = Product.objects.get(id=item_id)
                     order_item = OrderItem(
-                    order=order,
-                    product=product,
-                    quantity=item_data,
+                        order=order,
+                        product=product,
+                        quantity=item_data,
                     )
                     order_item.save()
 
                 except Product.DoesNotExist:
-                    messages.error(request, (
-                        "One of the products in your bag wasn't found in our database. "
-                        "Please call us for assistance!")
+                    messages.error(
+                        request,
+                        (
+                            "Product not found."
+                            "Please contact us!"
+                        ),
                     )
                     order.delete()
-                    return redirect(reverse('view_cart'))
+                    return redirect(reverse("view_cart"))
 
-            return redirect(reverse('payment_success', args=[order.order_number]))
+            return redirect(reverse(
+                            "payment_success", args=[order.order_number]))
 
         else:
-            messages.error(request, 'There was an error with your form. \
-                Please double check your information.')
+            messages.error(
+                request,
+                "There was an error with your form. \
+                Please double check your information.",
+            )
 
     else:
-        cart = request.session.get('cart', {})
+        cart = request.session.get("cart", {})
         if not cart:
             messages.error(request, "You do not have anything in your bag!")
-            return redirect(reverse('products'))
+            return redirect(reverse("products"))
 
         current_cart = cart_contents(request)
-        total = current_cart['grand_total']
+        total = current_cart["grand_total"]
         stripe_total = round(total * 100)
         stripe.api_key = stripe_secret_key
         intent = stripe.PaymentIntent.create(
@@ -74,18 +81,20 @@ def payment(request):
             currency=settings.STRIPE_CURRENCY,
         )
 
-
         order_form = OrderForm()
 
     if not stripe_public_key:
-        messages.warning(request, 'Stripe public key is missing. \
-            Did you forget to set it in your environment?')
+        messages.warning(
+            request,
+            "Stripe public key is missing. \
+            Did you forget to set it in your environment?",
+        )
 
-    template = 'payment/payment.html'
+    template = "payment/payment.html"
     context = {
-        'order_form': order_form,
-        'stripe_public_key': stripe_public_key,
-        'client_secret': intent.client_secret,
+        "order_form": order_form,
+        "stripe_public_key": stripe_public_key,
+        "client_secret": intent.client_secret,
     }
 
     return render(request, template, context)
@@ -95,7 +104,7 @@ def payment_success(request, order_number):
     """
     Handle successful checkouts
     """
-    save_info = request.session.get('save_info')
+    save_info = request.session.get("save_info")
     order = get_object_or_404(Order, order_number=order_number)
 
     if request.user.is_authenticated:
@@ -108,28 +117,30 @@ def payment_success(request, order_number):
         # Save the user's info
         if save_info:
             profile_data = {
-                'default_phone_number': order.phone_number,
-                'default_country': order.country,
-                'default_zipcode': order.zipcode,
-                'default_city': order.city,
-                'default_street_address1': order.street_address1,
-                'default_street_address2': order.street_address2,
-                'default_county': order.county,
+                "default_phone_number": order.phone_number,
+                "default_country": order.country,
+                "default_zipcode": order.zipcode,
+                "default_city": order.city,
+                "default_street_address1": order.street_address1,
+                "default_street_address2": order.street_address2,
+                "default_county": order.county,
             }
             user_profile_form = UserProfileForm(profile_data, instance=profile)
             if user_profile_form.is_valid():
                 user_profile_form.save()
 
+    messages.success(
+        request,
+        f"Order successfully processed! \
+        Your order number is {order_number}.",
+    )
 
-    messages.success(request, f'Order successfully processed! \
-        Your order number is {order_number}.')
+    if "cart" in request.session:
+        del request.session["cart"]
 
-    if 'cart' in request.session:
-        del request.session['cart']
-
-    template = 'payment/payment_success.html'
+    template = "payment/payment_success.html"
     context = {
-        'order': order,
+        "order": order,
     }
 
     return render(request, template, context)
