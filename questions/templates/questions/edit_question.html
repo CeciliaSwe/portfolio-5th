@@ -2,14 +2,21 @@
 {% load static %}
 {% block extra_css %}
 {% endblock %}
+
+{% block page_header %}
+
+<div class="container header-container">
+    <div class="col-12 col-md-6 offset-md-3 text-center mt-3">
+      <h2 class=" my-4">Question management</h2>
+      <h5 class="muted">Edit and reply to questions. Change status to "Published" if they are to be visible</h5>
+      <hr>
+    </div>
+  </div>
+
+{% endblock %}
+
 {% block content %}
 <div class="container h-100">
-    <div class="py-3 text-center">
-        <h2 class="mb-3">Question Management
-        </h2>
-        <p class="lead">Edit and respond to a question:
-        </p>
-    </div>
     {% if user.is_authenticated %}
     {% if request.user.is_superuser %}
     <div class="row">
@@ -43,13 +50,4 @@
     {% endif %}
 </div>
 
-{% endblock %}
-{% block postload_js %}
-{{ block.super }}
-<script type="text/javascript">
-    $('#new-image').change(function () {
-        var file = $('#new-image')[0].files[0];
-        $('#filename').text(`New image: ${file.name}`);
-    });
-</script>
 {% endblock %}
