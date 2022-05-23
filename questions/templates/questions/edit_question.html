@@ -7,11 +7,11 @@
 
 <div class="container header-container">
     <div class="col-12 col-md-6 offset-md-3 text-center mt-3">
-      <h2 class=" my-4">Question management</h2>
-      <h5 class="muted">Edit and reply to questions. Change status to "Published" if they are to be visible</h5>
-      <hr>
+        <h2 class=" my-4">Question management</h2>
+        <h5 class="muted">Edit and reply to questions. Change status to "Published" if they are to be visible</h5>
+        <hr>
     </div>
-  </div>
+</div>
 
 {% endblock %}
 
@@ -37,6 +37,36 @@
                                     <span class="font-weight-bold">Save
                                     </span>
                                 </button>
+                                <!-- Modal Trigger -->
+                                <button type="button" class="btn btn-outline-danger rounded-2" data-toggle="modal"
+                                    data-target="#deleteModal">
+                                    Delete
+                                    <i class="far fa-trash-alt"></i>
+                                </button>
+                                <!-- Deletion Modal -->
+                                <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="modalHeading"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="modalHeading">Delete Question</h5>
+                                                <button type="button" class="btn-light" data-dismiss="modal"
+                                                    aria-label="Close">x</button>
+                                            </div>
+                                            <div class="modal-body workout-card">
+                                                Are you sure you want to delete this question?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <div class="btn d-inline-block btn-outline-danger text-white">
+                                                    <a href="{% url 'delete_question' question.id %}"
+                                                        class="link">Delete</a>
+                                                </div>
+                                                <button type="button" class="btn btn-custom-secondary"
+                                                    data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </form>
