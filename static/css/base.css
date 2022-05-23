@@ -33,6 +33,11 @@ body {
     width: auto;
 }
 
+.footer {
+    height: 81px;
+    margin-top: -81px;
+  }
+
 
 
 /* from Bulma */
