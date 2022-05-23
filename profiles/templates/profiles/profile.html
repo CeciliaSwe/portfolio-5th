@@ -18,6 +18,7 @@
 {% block content %}
 
 <div class="container vh-100">
+    {% if orders %}
     <div class="row">
         <div class="col-12 col-lg-6">
 
@@ -47,7 +48,7 @@
                                     {% endfor %}
                                 </ul>
                             </td>
-                            <td> SEK {{ total|floatformat:0 }} </td>
+                            <td> SEK {{ order.order_total|floatformat:0 }} </td>
                         </tr>
                         {% endfor %}
                     </tbody>
@@ -55,6 +56,13 @@
             </div>
         </div>
     </div>
+    {% else %}
+    <div class="row">
+        <div class="col-12 col-lg-6">
+            You have not place any orders yet!
+        </div>
+    </div>
+    {% endif %}
 </div>
 
     {% endblock %}
