@@ -18,8 +18,8 @@ def newsletter_signup(request):
             messages.success(request, "You have successfully signed up!")
             subject = "Welcome to Active8!"
             to_email = [instance.email]
-            signup_message = """Thank you for signing up! Let's go for an adventure
-            Need to unsubscribe? Follow this link but we miss you!
+            signup_message = """Thank you for signing up! Let's go for an adventure\
+            Need to unsubscribe? Follow this link but we miss you!\
             https://active8-adventures.herokuapp.com/newsletter/unsubscribe/"""
             send_mail(
                 subject=subject,
