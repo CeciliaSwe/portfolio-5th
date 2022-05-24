@@ -63,4 +63,5 @@ def remove_from_cart(request, item_id):
         return redirect(reverse("view_cart"))
 
     except Exception as e:
+        messages.error(request, f'Error removing item: {e}')
         return HttpResponse(status=500)

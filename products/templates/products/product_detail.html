@@ -30,13 +30,12 @@
                     <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
                 </a>
                 {% if request.user.is_superuser %}
-                    <a class="link" href="{% url 'edit_product' product.id %}"><i class="fas fa-pen"></i> Edit</a>
-                    <!-- Modal Trigger -->
-                    <button type="button" class="btn btn-delete" data-toggle="modal"
-                        data-target="#deleteModalProduct">
-                        <i class="far fa-trash-alt"></i>
-                        Delete
-                    </button>
+                <a class="link" href="{% url 'edit_product' product.id %}"><i class="fas fa-pen"></i> Edit</a>
+                <!-- Modal Trigger -->
+                <button type="button" class="btn btn-delete" data-toggle="modal" data-target="#deleteModalProduct">
+                    <i class="far fa-trash-alt"></i>
+                    Delete
+                </button>
                 <!-- Deletion Modal -->
                 <div class="modal fade" id="deleteModalProduct" tabindex="-1" aria-labelledby="modalHeading"
                     aria-hidden="true">
@@ -54,7 +53,8 @@
                                 <div class="btn d-inline-block btn-outline-danger text-white">
                                     <a href="{% url 'delete_product' product.id %}" class="link">Delete</a>
                                 </div>
-                                <button type="button" class="btn btn-custom-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-custom-secondary"
+                                    data-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>
@@ -104,7 +104,8 @@
         <div class="col-12 col-md-6 col-lg-4">
             <div class="product-details-container mb-5 mt-md-5">
                 <h3 class="product-name mb-0 text-uppercase">{{ product.name }}</h3>
-                <h4 class="product-category mb-0 mt-0 text-uppercase small"> <i class="fas fa-tag"></i> {{ product.category }}
+                <h4 class="product-category mb-0 mt-0 text-uppercase small"> <i class="fas fa-tag"></i>
+                    {{ product.category }}
                 </h4>
                 <!-- Displays number of stars based on difficulty -->
                 <div>
@@ -140,12 +141,6 @@
                             </div>
                         </div>
                         <div class="col-12">
-                            <a href="{% url 'products' %}" class="btn btn-custom-secondary rounded-2 mt-5">
-                                <span class="icon">
-                                    <i class="fas fa-chevron-left"></i>
-                                </span>
-                                <span class="text-uppercase">Back</span>
-                            </a>
                             <input type="submit" class="btn btn-custom rounded-2 text-uppercase mt-5"
                                 value="Add to Cart">
                         </div>
@@ -164,11 +159,10 @@
 
 <script type="text/javascript">
     // Submit form
-    $('#addForm').submit(function(){
+    $('#addForm').submit(function () {
 
     })
 
     // Remove item and reload on click - from walkthrough
-
 </script>
 {% endblock %}
