@@ -88,12 +88,21 @@ body {
 
 }
 
+
 .link:hover {
     color: black;
     text-decoration: none;
-
 }
 
+.footer-link {
+    color: #339096;
+    text-decoration: underline;
+}
+
+.footer-link:hover {
+    color: #343a40;
+    text-decoration: underline;
+}
 
 /* Index */
 .hero-image {
