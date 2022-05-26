@@ -210,6 +210,7 @@ Role based access control was implemented and full Role Base Access Control (RBA
 #### HTML valiation
 
 HTML pages have been validated through the [HTML validator](https://validator.w3.org/nu/#textarea) without errors.
+Copies of the report can be found [here](assets/validation/HTML/)
 
 
 
@@ -233,7 +234,7 @@ A copy of the report can be found [here]()
 
 #### Python validaton
 
-The Python pages have been validated though the PEP8 validator. Copies of the reports can be found [here]()
+The Python pages have been validated though the PEP8 validator. Copies of the reports can be found [here](assets/validation/Python/)
 
 
 ##### Return to [top](#active8)
