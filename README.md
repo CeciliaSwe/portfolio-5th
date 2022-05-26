@@ -14,7 +14,7 @@ A full list of technologies used can be found in the technologies section of thi
 
 ## UX
 
-This website was created to showcase my knowledge in Fullstack Development eCommernce and to provide users with a place to browse for and but adventures.
+This website was created to showcase my knowledge in Fullstack Development eCommerce and to provide users with a place to browse for and buy adventures.
 
 ### User Stories:
 
@@ -26,7 +26,7 @@ Github issues were used to record the user stories. Stories were categorized int
 
 -
 
-#### New users:
+#### Users:
 
 -
 
@@ -216,7 +216,7 @@ Copies of the report can be found [here](assets/validation/HTML/)
 
 #### CSS validation
 
-No errors were found when passing through the official [W3C validator](https://jigsaw.w3.org/css-validator/). A copy of the report can be found [here]()
+No errors were found when passing through the official [W3C validator](https://jigsaw.w3.org/css-validator/). CSS validation results can be found [here](http://jigsaw.w3.org/css-validator/validator?lang=en&profile=css3svg&uri=https%3A%2F%2Factive8-adventures.herokuapp.com%2F&usermedium=all&vextwarning=&warning=1)
 
 #### JavaScript validation
 
@@ -287,19 +287,18 @@ web: gunicorn PROJ_NAME.wsgi
 
 **Final step - deployment**
 
-15. Next go to "Deploy" in the menu bar on the top
-16. Go to section "deployment method", choose "GitHub"
-17. New section will appear "Connect to GitHub" - Search for the repository to connect to
-18. Type the name of your repository and click "search"
-19. Once Heroku finds your repository - click "connect"
-20. Scroll down to the section "Automatic Deploys"
-21. Click "Enable automatic deploys" or choose "Deploy branch" and manually deploy
-22. Click "Deploy branch"
 
-Once the program runs:
-you should see the message "the app was sussesfully deployed"
+15. Open the terminal.
+16. Assuming MFA/2FA is used, click on Account Settings (under the avatar menu) on the Heroku Dashboard.
+17. Scroll down to the API Key section and click Reveal. Copy the API key.
+18. Gitpod workspace, enter the following command in the terminal: heroku_config and enter your API key that you copied when prompted.
+19. To get your app name from Heroku, enter the following command in the terminal: heroku apps
+20. To set the Heroku remote: Enter the following command in the terminal: heroku git:remote -a <app_name>
+21. Add and commit any changes to your code, if applicable.
+22.   Push to both GitHub and Heroku
+For GitHub: Enter the following command in the terminal: git push origin main
+For Heroku: Enter the following command in the terminal: git push heroku main
 
-23. Click the button "View"
 
 
 ### Final Deployment
@@ -313,8 +312,10 @@ Gitpod
 Heroku
     1. Under the app, browse to Config Vars
     2. Remove the value "DISABLE_COLLECTSTATIC = 1" from Config Vars
-    3. Browse to Deploy and run deployment
-    4. Wait for confirmation that app has deployed
+
+GitPod
+    1. Enter the following command in the terminal: git push heroku main
+    2. Enter credentials as needed
 
 
 ### Forking the GitHub Repository

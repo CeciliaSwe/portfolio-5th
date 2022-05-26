@@ -68,7 +68,7 @@
                                     <div class="input-group">
                                         <input class="form-control form-control-sm qty_input ml-0" type="number"
                                             name="quantity" value="{{ item.quantity }}" min="1" max="99"
-                                            data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
+                                            data-item_id="{{ item.item_id }}" id="id_qtysm_{{ item.item_id }}">
                                     </div>
                                 </div>
                             </form>
@@ -76,12 +76,10 @@
                                 <small>Update</small>
                                 <i class="fas fa-redo"></i>
                             </a>
-                            <p class="my-0 float-right">
-                                <div class="text-danger">
-                                    <a href="{% url 'remove_from_cart' item.item_id %}"
-                                        class="text-danger"> <small> Remove  <i class="far fa-trash-alt"></i></small></a>
-                                </div>
-                            </p>
+                            <div class="text-danger my-0 float-right">
+                                <a href="{% url 'remove_from_cart' item.item_id %}" class="text-danger"> <small> Remove
+                                        <i class="far fa-trash-alt"></i></small></a>
+                            </div>
                         </div>
                     </div>
                     <div class="row">
@@ -146,16 +144,12 @@
                                 <p class="my-0">SEK {{ item.product.price | calc_subtotal:item.quantity }}</p>
                             </td>
                             <td class="py-3">
-                                <p class="my-0">
-                                    <div class="text-danger">
-                                        <a href="{% url 'remove_from_cart' item.item_id %}"
-                                            class="text-danger"> <small> Remove  <i class="far fa-trash-alt"></i></small></a>
+                                    <div class="text-danger my-0">
+                                        <a href="{% url 'remove_from_cart' item.item_id %}" class="text-danger"> <small>
+                                                Remove <i class="far fa-trash-alt"></i></small></a>
                                     </div>
-                                </p>
                             </td>
                         </tr>
-
-
                         {% endfor %}
                     </table>
                 </div>
