@@ -288,6 +288,7 @@ web: gunicorn PROJ_NAME.wsgi
 **Final step - deployment**
 
 
+
 15. Open the terminal.
 16. Assuming MFA/2FA is used, click on Account Settings (under the avatar menu) on the Heroku Dashboard.
 17. Scroll down to the API Key section and click Reveal. Copy the API key.
@@ -299,6 +300,7 @@ web: gunicorn PROJ_NAME.wsgi
 For GitHub: Enter the following command in the terminal: git push origin main
 For Heroku: Enter the following command in the terminal: git push heroku main
 
+23. Click the button "View"
 
 
 ### Final Deployment
@@ -313,7 +315,7 @@ Heroku
     1. Under the app, browse to Config Vars
     2. Remove the value "DISABLE_COLLECTSTATIC = 1" from Config Vars
 
-GitPod
+ GitPod
     1. Enter the following command in the terminal: git push heroku main
     2. Enter credentials as needed
 

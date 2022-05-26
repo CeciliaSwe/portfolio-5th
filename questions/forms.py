@@ -1,4 +1,4 @@
-"""form for super user to add products"""
+"""form for users to add questions"""
 
 from django import forms
 from .models import Question
