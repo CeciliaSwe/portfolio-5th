@@ -7,7 +7,7 @@ A full list of technologies used can be found in the technologies section of thi
 
 ## Active8 Responsive Website
 
-![Responsive](#)
+![Responsive](assets/responsive_site.png)
 
 
 [Link to deployed site](https://active8-advenstures.herokuapp.com/)
