@@ -20,7 +20,6 @@ body {
 }
 
 
-
 .custom-toast {
     height: auto;
     width: auto;
@@ -31,7 +30,10 @@ body {
     margin-top: -81px;
   }
 
-
+.img-product {
+    height: 30vh;
+    object-fit: cover;
+}
 
 /* from Bulma */
 .icon {
