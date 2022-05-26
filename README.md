@@ -229,7 +229,7 @@ Errors relating to ES6 syntax was resolved by adding this line to the beginning 
 No errors were found with the exception of stripe_element.js which returns "undefined variables". This is due to core functionality referring to Stripe. Copy of the code was taken from older version Stripe pages that were referenced in Butique Ado.
 
 
-A copy of the report can be found [here]()
+A copy of the report can be found [here](/assets/validation/Javascript/jshint_validation.pdf)
 
 
 #### Python validaton
