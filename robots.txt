@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /profiles/
+Disallow: /cart/
+Sitemap: https://active8-adventures.herokuapp.com/sitemap.xml
