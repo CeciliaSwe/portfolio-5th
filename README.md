@@ -20,6 +20,8 @@ This website was created to showcase my knowledge in Fullstack Development eComm
 
 Github issues were used to record the user stories. Stories were categorized into different priorities: “Must have”, “Should Have” and “Could Have”.
 
+![User Stories](assets/testing/user_stories.png)
+
 #### Site administrator:
 
 -
@@ -34,7 +36,8 @@ Github issues were used to record the user stories. Stories were categorized int
 
 ### Wireframes
 
-Wireframes were created with Balsamiq and are uploaded to a separate folder - [View](#). The project was developed from the initial wireframes and some modifications were made during the development process for improved usability and user experience.
+Wireframes were created with Balsamiq and are uploaded to a separate folder - [View](/assets/wireframes/).
+Some modifications were made during the development process for improved usability and user experience.
 
 ### Design
 
@@ -52,12 +55,12 @@ I chose a light theme with dark header and footer. A bright turquoise is used fo
 
 #### Model
 
-An initial models was created with and is uploaded to a separate folder along with ERDs. ERDs have been modified along the way and final versions can be viewed here - [View]()
-The final models has minor changes (such as field type) for usability purposes, but the overall structure has been adhered to.
+An initial model was created with and is uploaded to a separate folder along with ERDs. ERDs have been modified along the way and final versions can be viewed here - [View](assets/erd_initial/Database%20ER%20diagram%20_24May2022_final.pdf)
+
 
 #### Agile Methodology
 
-Github Issues were used to create User Stories and group them according to MoSCoW prioritization technique. GitHub Projects and Kanban board was used to visualize and execute the agile methodology. The issues are currently in two categories: “Done” and “For next release”.
+Github Issues were used to create User Stories and group them according to MoSCoW prioritization technique. [GitHub Projects](https://github.com/CeciliaSwe/portfolio-5th/projects/1) and Kanban board was used to visualize and execute the agile methodology. The issues are currently in two categories: “Done” and “For next release”.
 
 ## Features
 
@@ -115,6 +118,16 @@ Github Issues were used to create User Stories and group them according to MoSCo
 
 ##### Return to [top](#active8)
 
+### SEO
+
+### Facebook
+
+Active8 utilises a mock Facebook page for marketing purposes to post adverts, interesting content and get users engaged. Full Facebook wireframes can be found [here](assets/facebook_marketing.pdf)
+
+![facebook main banner](assets/facebook_marketing.png)
+
+
+
 ## Technologies Used
 
 ### Languages
@@ -150,12 +163,14 @@ Github Issues were used to create User Stories and group them according to MoSCo
 	* Used to generate the screenshots for responsive design.
 * [Heroku](https://dashboard.heroku.com/)
 	* Could application platform where the deployed application is served from
-* [AWS S3]()
-	* Could application platform where the deployed application is served from
+* [AWS S3](https://aws.amazon.com/)
+	* For static and media files
 * Heroku Postgres
     * PostgreSQL is one of the world's most popular relational database management systems.
-* Tiny JPG
-    *
+* [Tiny JPG](https://tinyjpg.com/)
+    * To compress images for the web
+* [Shutterstock](https://www.shutterstock.com/)
+    * For images used on the page
 
 
 
@@ -165,6 +180,11 @@ Github Issues were used to create User Stories and group them according to MoSCo
 
 Owing to time constraints, it was not possible to design and implement automatic Unit-testing for this project, and so extensive manual testing was completed instead.
 An MS Excel workbook detailing these tests and outcomes can be found [here]()
+
+### Role Based Access Control
+
+Role based access control was implemented and full Role Base Access Control (RBAC) matrix is found in the Excel testing workbook [here]()
+![RBAC](assets/testing/RBAC.png)
 
 ### Bugs
 
