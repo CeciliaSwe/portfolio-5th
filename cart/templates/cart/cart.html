@@ -57,8 +57,8 @@
                         </div>
                         <div class="col-8">
                             <span class="my-0"><strong>{{ item.product.name }} </strong></span>
-                            <span class="my-0"> x {{ item.quantity }} á ${{ item.product.price }} each</span>
-                            <p><strong>Subtotal: </strong>${{ item.product.price | calc_subtotal:item.quantity }}</p>
+                            <span class="my-0"> x {{ item.quantity }} á SEK{{ item.product.price }} each</span>
+                            <p><strong>Subtotal: </strong>SEK{{ item.product.price | calc_subtotal:item.quantity }}</p>
 
                         </div>
                         <div class="col-12">
