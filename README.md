@@ -193,14 +193,15 @@ Role based access control was implemented and full Role Base Access Control (RBA
 - Add to cart functionality not functioning. Resolved by
 - Form input fields visible to all when intended for superusers only. Resolved by restarting the GitPod environment
 - Delete from cart functionality not functioning. Resolved by
+- Update cart functionality not working, resolved by rearranging the DOM to align with the javascript executing the function
+- Footer not staying at bottom of screen, resolved by setting a negative top margin to the footer
+- Navbar disabled with toasts, resolved by removing fixed toast sizing
 
 
 
 #### Unresolved bugs
 
-- Update cart functionality not functioning.
-- Save info box not functioning
-- Footer does not stay at bottom of screen
+- Specific to iOS; updating the item quantity in prpduct cart and tapping "Update" does not update the quantity. Updating the quantity ad tapping "OK" from the pop-up keyboard does update the quantity. Functionality works as expected when testing on Mobile S/M/L on pc.
 
 
 
