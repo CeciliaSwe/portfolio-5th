@@ -69,7 +69,7 @@ def payment(request):
     else:
         cart = request.session.get("cart", {})
         if not cart:
-            messages.error(request, "You do not have anything in your bag!")
+            messages.error(request, "Your cart is empty!")
             return redirect(reverse("products"))
 
         current_cart = cart_contents(request)
