@@ -69,31 +69,62 @@ Github Issues were used to create User Stories and group them according to MoSCo
 #### Navbar and footer
 
 - Navbar and footer are using Bootstrap components and are adjusted to the needs of the project.
-![Navbar](#)
+    - The Navbar will display "Sign In" under the Profile Icon if use is not signed in and will display the Username if logged in. Dropdown options will display as follows:
+    Signed out: "Sign Up/Register" and "Sign In"
+    Signed in: "Order History" and "Sign Out"
+    Superuser Signed In: "Product Management", "Q&A Management", "Order History" and "Sign Out"
+    - The footer has links to the Contact Form, Newsletter signup and Facebook. The Facebook link does not direct to a specific Facebook page since the Facebook Pages for this project was made using the Balsamiq Wireframe template.
 
-![Footer](#)
+    ![Navbar](assets/features/navbar.png)
+    ![Footer](assets/features/footer.png)
 
-##### Home page
 
-- Home page consists of a Welcome Hero image with a short message to view advenstures along with 3 info boxes.
-![Home]()
+#### Landing Page
 
-![Home]()
+- Displays a large hero image with a big button directing to all products. Also gives user information about Active8, information and direct link to the Q&A page and information about and direct link to the newsletter signup page.
+
+![Responsive](assets/responsive_site.png)
+
 
 
 #### Products
 
 - Clicking "Come join our adventures" will take the user to the products page and display all products. Navigating to products from the navbar (Shop dropdown) provides the user with the option to display all advenstures, or to filter based on indended end user age.
+- The Product page will display all available products (all or based on applied filter) along with the option to "View" or "Buy".
+- Clicking "Buy" will add 1 item in the cart. The Navbar Cart will display "Empty" if no items are in the cart and will display the total amount if there are items in the cart.
+- A success toast will alert the user if an item was added (previously not in cart) or updated (previously in cart).
+- Clicking "View" or clicking on the product image will navigate to the Product Details page for that product.
 
-![Products]()
+![Products](assets/features/products.png)
 
 #### Product details
 
-#### FAQ
+- The product details gives more details information about the product, such as the difficulty level and the category label, as well as the option to directly chose quantity before adding to cart.
+- Clicking add to cart will add the specified quantity to the cart
+- Clicking "Back to all adventures" will navigate back to all products
+- A success toast will alert the user if an item was added (previously not in cart) or updated (previously in cart).
+- Superusers will also see the "Edit" and "Delete" options.
+- Clicking "Edit" will navigate to the Edit Product Form
+- Clicking "Delete" will prompt a deletion modal where the superusers must confirm deletion of the product before deletion is executed.
+
+![Product Details](assets/features/product_details.png)
+![Deletion Modal](assets/features/deletion_modal.png)
 
 #### Cart
 
+- The Shopping Cart will giver the user an overview of all added items as well as the option to revise the quantity or remove items from the cart
+- From the cart, the user can chose to go "Back" (navigating to Products) or go to "Secure Checkout" (navigating to the Payment Form)
+- A toast will alert the user if an item was updated or removed from the cart.
+
+![Cart](assets/features/cart.png)
+
 #### Payment
+
+#### FAQ
+
+
+
+
 
 #### Newsletter
 
