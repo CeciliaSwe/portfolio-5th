@@ -110,6 +110,10 @@ Github Issues were used to create User Stories and group them according to MoSCo
 ![Product Details](assets/features/product_details.png)
 ![Deletion Modal](assets/features/deletion_modal.png)
 
+#### Add product
+
+#### Edit product
+
 #### Cart
 
 - The Shopping Cart will giver the user an overview of all added items as well as the option to revise the quantity or remove items from the cart
@@ -120,13 +124,28 @@ Github Issues were used to create User Stories and group them according to MoSCo
 
 #### Payment
 
-#### FAQ
+- Users can fill out a Payment form with their details to complete a purchase.
+- The order total will be displayed (1) in the Navbar cart (2) In the Order Summary and (3) Below the "Complete Order" button.
+- The payment card input will validate invalid card information and give user direct feedback
+- Clicking "Back to Cart" will navigate back to the Cart
+- Clicking "Complete Order" will complete the order and redirect to the confirmation/payment success page.
 
+![Cart](assets/features/payment.png)
 
+#### Q&A
 
-
+#### Manage Q&A
 
 #### Newsletter
+
+- From links in the footer and on the landing page, the user can navigate to the Newsletter signup page. Entering a valid email and clicking "Subscribe" will send a Signup confirmation email to the email.
+- The signup confirmation email as well as the Newsletter signup page links to the Newsletter Unsubscribe page, where the user enters their email and clicks "Unsubscribe" to unsubscribe. An Unsubscribe confirmation email is then sent to the user.
+- A toast will alert the user if signup/unsubscribe was successful or warn if signup is attempted for an already existing email or unsubscribe is attempted for a non-existing email.
+
+![Cart](assets/features/newsletter.png)
+
+
+
 
 #### CRUD functionality
 
