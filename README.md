@@ -130,7 +130,13 @@ Github Issues were used to create User Stories and group them according to MoSCo
 - Clicking "Back to Cart" will navigate back to the Cart
 - Clicking "Complete Order" will complete the order and redirect to the confirmation/payment success page.
 
-![Cart](assets/features/payment.png)
+![Payment](assets/features/payment.png)
+
+##### Payment success
+
+- User is informed order is completed by the success toast with confirmation number and a confirmation page. This page also has a link to the Contact form as well as a button back to the shop.
+
+![Payment](assets/features/payment.png)
 
 #### Q&A
 
@@ -142,7 +148,7 @@ Github Issues were used to create User Stories and group them according to MoSCo
 - The signup confirmation email as well as the Newsletter signup page links to the Newsletter Unsubscribe page, where the user enters their email and clicks "Unsubscribe" to unsubscribe. An Unsubscribe confirmation email is then sent to the user.
 - A toast will alert the user if signup/unsubscribe was successful or warn if signup is attempted for an already existing email or unsubscribe is attempted for a non-existing email.
 
-![Cart](assets/features/newsletter.png)
+![Newsletter](assets/features/newsletter.png)
 
 
 
@@ -151,9 +157,8 @@ Github Issues were used to create User Stories and group them according to MoSCo
 
 #### Signup / Login / Logout
 
-- Users can signup to gain access to all features
+- Users can signup to gain access to all features using Allauth
 
-![Signup]()
 
 #### Toasts
 
