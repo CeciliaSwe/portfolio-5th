@@ -136,11 +136,19 @@ Github Issues were used to create User Stories and group them according to MoSCo
 
 - User is informed order is completed by the success toast with confirmation number and a confirmation page. This page also has a link to the Contact form as well as a button back to the shop.
 
-![Payment](assets/features/payment.png)
+![Payment Success](assets/features/payment_success.png)
 
 #### Q&A
 
+- All users can see published questions. Logged in users can add a new questiona (which defaults to draft and is visible only when updated to published by a superuser)
+
+![Payment](assets/features/questions.png)
+
 #### Manage Q&A
+
+- Superusers have the option to "Q&A Management" from the navbar. This will render a page with all questions in draft. Superusers will also see the option to "Edit/Reply" for each question. Clicking "Edit/Reply" navigated to the edit question form where superusers can edit question, write a reply and publish the questions. From this view, superusers can also delete the question.
+
+![Payment](assets/features/question_reply.png)
 
 #### Newsletter
 
