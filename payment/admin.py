@@ -19,8 +19,7 @@ class OrderAdmin(admin.ModelAdmin):
               'email', 'phone_number', 'country',
               'zipcode', 'city', 'street_address1',
               'street_address2', 'county',
-              'order_total', 'grand_total', 'original_bag',
-              'stripe_pid')
+              'order_total')
 
     list_display = ('order_number', 'date', 'first_name', 'last_name',
                     'order_total',)
