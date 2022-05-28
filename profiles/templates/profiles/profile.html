@@ -29,7 +29,6 @@
                             <th>Order Number</th>
                             <th>Date</th>
                             <th>Items</th>
-                            <th>Total</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -48,7 +47,6 @@
                                     {% endfor %}
                                 </ul>
                             </td>
-                            <td> SEK {{ order.order_total|floatformat:0 }} </td>
                         </tr>
                         {% endfor %}
                     </tbody>
