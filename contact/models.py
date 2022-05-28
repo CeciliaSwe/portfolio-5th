@@ -4,6 +4,9 @@ from django.db import models
 
 
 class Contact(models.Model):
+    """
+    Model for contacts
+    """
     first_name = models.CharField(max_length=50, null=False, blank=False)
     last_name = models.CharField(max_length=50, null=False, blank=False)
     message = models.CharField(max_length=2000, null=False, blank=False)

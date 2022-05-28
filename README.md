@@ -18,21 +18,10 @@ This website was created to showcase my knowledge in Fullstack Development eComm
 
 ### User Stories:
 
-Github issues were used to record the user stories. Stories were categorized into different priorities: “Must have”, “Should Have” and “Could Have”.
+Github issues were used to record the user stories. Stories were categorized into different priorities: “Must have”, “Should Have” and “Could Have” and tracked in [GitHub Projects](https://github.com/CeciliaSwe/portfolio-5th/projects/1)
 
 ![User Stories](assets/testing/user_stories.png)
 
-#### Site administrator:
-
--
-
-#### Users:
-
--
-
-
-#### Could haves (not implemented yet)
--
 
 ### Wireframes
 
@@ -56,6 +45,8 @@ I chose a light theme with dark header and footer. A bright turquoise is used fo
 #### Model
 
 An initial model was created with and is uploaded to a separate folder along with ERDs. ERDs have been modified along the way and final versions can be viewed here - [View](assets/erd_initial/Database%20ER%20diagram%20_24May2022_final.pdf)
+
+![ERD](assets/erd_initial/erd.png)
 
 
 #### Agile Methodology
@@ -160,15 +151,12 @@ Github Issues were used to create User Stories and group them according to MoSCo
 
 
 
-
-#### CRUD functionality
-
 #### Signup / Login / Logout
 
-- Users can signup to gain access to all features using Allauth
+- Users can signup to gain access to all features using Allauth.
 
 
-#### Toasts
+
 
 
 ### Features Left to Implement
@@ -182,6 +170,12 @@ Github Issues were used to create User Stories and group them according to MoSCo
 ##### Return to [top](#active8)
 
 ### SEO
+
+SEO techniques were implemented to the best of my ability. I used keywords: adventure, at home adventure, experience, active, activate, active adventure, active8, active at home, exploring, explorer, mystery, at home mystery, problem solving, familiy activity.
+
+Image alternative text is the image name and these have been chosen to reflect the image content.
+
+The site has been equipped with sitemap generated and robots.txt.
 
 ### Facebook
 
@@ -234,6 +228,9 @@ Active8 utilises a mock Facebook page for marketing purposes to post adverts, in
     * To compress images for the web
 * [Shutterstock](https://www.shutterstock.com/)
     * For images used on the page
+* [Xml Sitemaps](https://www.xml-sitemaps.com/)
+    * For generating the xml sitemap
+
 
 
 
@@ -253,13 +250,13 @@ Role based access control was implemented and full Role Base Access Control (RBA
 
 #### Resolved Bugs
 
-- Add to cart functionality not functioning. Resolved by
+- Add to cart functionality not functioning. Resolved by updating the view.
 - Form input fields visible to all when intended for superusers only. Resolved by restarting the GitPod environment
-- Delete from cart functionality not functioning. Resolved by
-- Update cart functionality not working, resolved by rearranging the DOM to align with the javascript executing the function
-- Footer not staying at bottom of screen, resolved by setting a negative top margin to the footer
-- Navbar disabled with toasts, resolved by removing fixed toast sizing
-
+- Delete from cart functionality not functioning. Resolved by updating the view.
+- Update cart functionality not working, resolved by rearranging the DOM to align with the javascript executing the function.
+- Footer not staying at bottom of screen, resolved by setting a negative top margin to the footer.
+- Navbar disabled with toasts, resolved by removing fixed toast sizing.
+- Grand total not saving to order, resolved by removing redundant admin fields.
 
 
 #### Unresolved bugs

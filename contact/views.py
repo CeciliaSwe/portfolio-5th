@@ -6,7 +6,9 @@ from .forms import ContactForm
 
 
 def contact(request):
-
+    """
+    To submit contact form
+    """
     if request.method == "POST":
         form = ContactForm(request.POST, request.FILES)
 

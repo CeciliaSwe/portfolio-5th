@@ -7,6 +7,9 @@ from .forms import NewsletterUserSignUpForm
 
 
 def newsletter_signup(request):
+    """
+    newsletter signup
+    """
     form = NewsletterUserSignUpForm(request.POST or None)
 
     if form.is_valid():
@@ -37,6 +40,9 @@ def newsletter_signup(request):
 
 
 def newsletter_unsubscribe(request):
+    """
+    Newsletter unsubscribe
+    """
     form = NewsletterUserSignUpForm(request.POST or None)
 
     if form.is_valid():

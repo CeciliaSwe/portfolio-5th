@@ -13,6 +13,9 @@ import stripe
 
 
 def payment(request):
+    """
+    Handle payments
+    """
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
