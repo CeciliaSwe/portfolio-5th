@@ -107,7 +107,6 @@ Github Issues were used to create User Stories and group them according to MoSCo
 
  ![Add products](assets/features/add_product.png)
 
-#### Edit product
 
 #### Cart
 
@@ -436,6 +435,8 @@ pip3 install -r requirements.txt
 ## Credits
 
 This project is based on the "Boutique Ado" walkthrough from Code Institute, however all code has been customized and adapted for this project, both backend and frontend. Other inspiration and tutoritals are credited as per below:
+
+- Inspiration for the [Newsletter App](https://www.youtube.com/watch?v=TBVsILIt4HM)
 
 
 ### Acknowledgements
