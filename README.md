@@ -5,6 +5,14 @@ Active8 is an eCommerce shop for people looking for an at-home adventure. Any us
 
 A full list of technologies used can be found in the technologies section of this document. Note that GitHub as of March 2021 automatically creates a Table of Contents for the README file.
 
+## Business Goals
+
+### External User's (Consumer) Goals
+Find suitable adventures to experience at home.
+
+### Site Owner's Goals
+Motivate and inspire users (customers) to purchase adventures and promote a healthy, active lifestyle.
+
 ## Active8 Responsive Website
 
 ![Responsive](assets/responsive_site.png)
@@ -340,11 +348,11 @@ The Python pages have been validated though the PEP8 validator. Copies of the re
 8. Go to Resources Tab, Add-ons, search and add Heroku Postgres
 9. Choose "settings" from the menu on the top of the page
 10. Go to section "Config Vars" and click button "Reveal Config Vars".
-11. Add the below variables to the list
-    * Database URL will be added automaticaly
-    * Secret_key - is the Django key
-    * AWS S3 - ADD
-    * Configure "DISABLE_COLLECTSTATIC = 1" in Config Vars
+11. Add the below variables to the list and temporarily add "DISABLE_COLLECTSTATIC = 1" in Config Vars.
+
+![Heroku ConfigVars](assets/heroku_configvars.png)
+
+
 
 
 **GitPod/GitHub**
@@ -377,18 +385,18 @@ For Heroku: Enter the following command in the terminal: git push heroku main
 ### Final Deployment
 
 Gitpod
-    1. Ensure all required files up-to-date and that application is working
-    2. Run "pip3 freeze --local > requirements.txt" to update requirements file
-    3. Ensure "DEBUG = False" set in settings.py
-    4. Perform commit and push to GitHub
+1. Ensure all required files up-to-date and that application is working
+2. Run "pip3 freeze --local > requirements.txt" to update requirements file
+3. Ensure "DEBUG = False" set in settings.py
+4. Perform commit and push to GitHub
 
 Heroku
-    1. Under the app, browse to Config Vars
-    2. Remove the value "DISABLE_COLLECTSTATIC = 1" from Config Vars
+1. Under the app, browse to Config Vars
+2. Remove the value "DISABLE_COLLECTSTATIC = 1" from Config Vars
 
  GitPod
-    1. Enter the following command in the terminal: git push heroku main
-    2. Enter credentials as needed
+1. Enter the following command in the terminal: git push heroku main
+2. Enter credentials as needed
 
 
 ### Forking the GitHub Repository
