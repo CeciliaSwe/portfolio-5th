@@ -1,7 +1,7 @@
 # Active8
 
 ## Purpose
-Active8 is an eCommerce shop for people looking for an at-home adventure. Any user can view products, shop and sign up for a newsletter, but only registered users can add questions and have their orders saves to their profiles.
+Active8 is an eCommerce shop for people looking for an at-home adventure. Any user can view products, shop and sign up for a newsletter, but only registered users can add questions and view their order history.
 
 A full list of technologies used can be found in the technologies section of this document. Note that GitHub as of March 2021 automatically creates a Table of Contents for the README file.
 
@@ -10,7 +10,7 @@ A full list of technologies used can be found in the technologies section of thi
 ![Responsive](assets/responsive_site.png)
 
 
-[Link to deployed site](https://active8-advenstures.herokuapp.com/)
+[Link to deployed site](https://active8-adventures.herokuapp.com/)
 
 ## UX
 
@@ -44,7 +44,7 @@ I chose a light theme with dark header and footer. A bright turquoise is used fo
 
 #### Model
 
-An initial model was created with and is uploaded to a separate folder along with ERDs. ERDs have been modified along the way and final versions can be viewed here - [View](assets/erd_initial/Database%20ER%20diagram%20_24May2022_final.pdf)
+An initial model was created with LucidCharts and is uploaded to a separate folder along with ERDs. ERDs have been modified along the way and final versions can be viewed here - [View](assets/erd_initial/Database%20ER%20diagram%20_24May2022_final.pdf)
 
 ![ERD](assets/erd_initial/erd.png)
 
@@ -101,7 +101,11 @@ Github Issues were used to create User Stories and group them according to MoSCo
 ![Product Details](assets/features/product_details.png)
 ![Deletion Modal](assets/features/deletion_modal.png)
 
-#### Add product
+#### Add Product
+
+ Superusers can add new products via the Add Product Form accessible via the navbar "Product Management" option.
+
+ ![Add products](assets/features/add_product.png)
 
 #### Edit product
 
@@ -129,17 +133,24 @@ Github Issues were used to create User Stories and group them according to MoSCo
 
 ![Payment Success](assets/features/payment_success.png)
 
+##### Order History
+
+- Logged in Users can view the previous orders.
+
+![Order History](assets/features/order_history.png)
+
+
 #### Q&A
 
 - All users can see published questions. Logged in users can add a new questiona (which defaults to draft and is visible only when updated to published by a superuser)
 
-![Payment](assets/features/questions.png)
+![Q&A](assets/features/questions.png)
 
 #### Manage Q&A
 
 - Superusers have the option to "Q&A Management" from the navbar. This will render a page with all questions in draft. Superusers will also see the option to "Edit/Reply" for each question. Clicking "Edit/Reply" navigated to the edit question form where superusers can edit question, write a reply and publish the questions. From this view, superusers can also delete the question.
 
-![Payment](assets/features/question_reply.png)
+![Manage Q&A](assets/features/question_reply.png)
 
 #### Newsletter
 
@@ -230,6 +241,8 @@ Active8 utilises a mock Facebook page for marketing purposes to post adverts, in
     * For images used on the page
 * [Xml Sitemaps](https://www.xml-sitemaps.com/)
     * For generating the xml sitemap
+* [LucidCharts](https://lucidchart.com/)
+    * For creating the ERD
 
 
 
@@ -349,7 +362,6 @@ web: gunicorn PROJ_NAME.wsgi
 **Final step - deployment**
 
 
-
 15. Open the terminal.
 16. Assuming MFA/2FA is used, click on Account Settings (under the avatar menu) on the Heroku Dashboard.
 17. Scroll down to the API Key section and click Reveal. Copy the API key.
@@ -357,11 +369,10 @@ web: gunicorn PROJ_NAME.wsgi
 19. To get your app name from Heroku, enter the following command in the terminal: heroku apps
 20. To set the Heroku remote: Enter the following command in the terminal: heroku git:remote -a <app_name>
 21. Add and commit any changes to your code, if applicable.
-22.   Push to both GitHub and Heroku
+22. Push to both GitHub and Heroku
 For GitHub: Enter the following command in the terminal: git push origin main
 For Heroku: Enter the following command in the terminal: git push heroku main
 
-23. Click the button "View"
 
 
 ### Final Deployment
@@ -414,13 +425,6 @@ $ git clone https://github.com/CeciliaSwe/portfolio-5th
 * AWS S3
 
 
-```
-os.environ["DATABASE_URL"] = "..."
-os.environ["SECRET_KEY"] = "..."
-os.environ["CLOUDINARY_URL"] = "..."
-os.environ["DEVELOPMENT"] = "True"
-```
-
 3. Run command
 ```
 pip3 install -r requirements.txt
@@ -432,9 +436,6 @@ pip3 install -r requirements.txt
 ## Credits
 
 This project is based on the "Boutique Ado" walkthrough from Code Institute, however all code has been customized and adapted for this project, both backend and frontend. Other inspiration and tutoritals are credited as per below:
-
-- Newsletter app
--
 
 
 ### Acknowledgements
