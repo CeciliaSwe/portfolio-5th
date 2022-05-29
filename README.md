@@ -239,7 +239,7 @@ Active8 utilises a mock Facebook page for marketing purposes to post adverts, in
 ## Testing
 
 Owing to time constraints, it was not possible to design and implement automatic Unit-testing for this project, and so extensive manual testing was completed instead.
-An MS Excel workbook detailing these tests and outcomes can be found [here]()
+An MS Excel workbook detailing these tests and outcomes can be found [here](assets/testing/page_tests_portfolio5th_May2022.xlsx)
 
 ### Role Based Access Control
 
@@ -256,7 +256,7 @@ Role based access control was implemented and full Role Base Access Control (RBA
 - Update cart functionality not working, resolved by rearranging the DOM to align with the javascript executing the function.
 - Footer not staying at bottom of screen, resolved by setting a negative top margin to the footer.
 - Navbar disabled with toasts, resolved by removing fixed toast sizing.
-- Grand total not saving to order, resolved by removing redundant admin fields.
+- Order cannot be viewed in Admin panel, resolved by removing redundant admin fields.
 
 
 #### Unresolved bugs
